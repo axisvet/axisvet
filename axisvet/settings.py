@@ -23,10 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '@a(50u0gu67n%sgfq4*%tvv3-=$g=3vm(9@0yb&yfog67#l1wr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+INTERNAL_IPS = ['127.0.0.1', ]
 
 # Application definition
 
@@ -37,7 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'appointments',
+    'consultations',
+    'items',
+    'organisations',
+    'visitors',
+    'debug_toolbar',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -48,6 +58,19 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+'''
+#deprecated in Django 1.10 but debug-toolbar won't work with MIDDLEWARE above
+MIDDLEWARE_CLASSES = (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+)
+'''
+
 
 ROOT_URLCONF = 'axisvet.urls'
 
@@ -105,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Bucharest'
 
 USE_I18N = True
 
@@ -113,6 +136,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+#DATETIME_FORMAT = 'd-m-Y H:i'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
