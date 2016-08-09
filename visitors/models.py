@@ -11,6 +11,13 @@ class PatientGender(TimeStampedModel):
         return self.gender
 
 
+class Species(TimeStampedModel):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+
 class Client(TimeStampedModel):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
@@ -30,7 +37,7 @@ class Client(TimeStampedModel):
 class Patient(TimeStampedModel):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='patient_fk')
     name = models.CharField(max_length=30)
-    species = models.CharField(max_length=20, blank=True)
+    species = models.ForeignKey(Species)
     breed = models.CharField(max_length=30, blank=True)
     gender = models.ForeignKey(PatientGender)
     date_of_birth = models.DateField(blank=True, null=True)

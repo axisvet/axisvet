@@ -1,7 +1,9 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Item, ItemType, Medicine, ItemCategory, VatRate, Package, Unit
+from .models import Item, ItemType, Medicine, ItemCategory, \
+    VatRate, Package, Unit, SpecialProcedure, SampleType, Procedure, \
+    Supply, Food, LaboratoryAnalysis, LaboratoryAnalysisReferenceValues
 
 
 class MedicineInline(admin.StackedInline):
@@ -17,7 +19,7 @@ class ItemAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Item, ItemAdmin)
-# admin.site.register(ItemType)
+admin.site.register(ItemType)
 admin.site.register(ItemCategory)
 admin.site.register(VatRate)
 admin.site.register(Package)

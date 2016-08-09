@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db.models import Prefetch
 # Register your models here.
-from .models import Client, Patient, PatientGender
+from .models import Client, Patient, PatientGender, Species
 
 
 class PatientInline(admin.StackedInline):
@@ -11,10 +11,14 @@ class PatientInline(admin.StackedInline):
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'mobile')
+    list_display = ('first_name', 'last_name', 'mobile', 'getpatients')
 
-    def get_patients(self, obj):
-        p = Patient.objects.filter(client_id=obj.pk)
+    # def get_patients(self, obj):
+    #    p = Patient.objects.filter(client_id=obj.pk)
+    #    return list(p)
+
+    def getpatients(self, obj):
+        p = obj.patient_pk.all()
         return list(p)
 
     search_fields = ['first_name', 'last_name', 'street_address', 'zip', 'mobile', 'patient_fk__name']
@@ -34,3 +38,4 @@ class PatientAdmin(admin.ModelAdmin):
 
 admin.site.register(Patient, PatientAdmin)
 admin.site.register(PatientGender)
+admin.site.register(Species)
