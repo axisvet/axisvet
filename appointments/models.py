@@ -10,12 +10,16 @@ from organisations import models as organisation_models
 # Create your models here.
 from model_utils.models import TimeStampedModel
 
+
 class AppointmentStatus(TimeStampedModel):
     class Meta:
         verbose_name_plural = "appointment status"
+
     status = models.CharField(max_length=20)
+
     def __str__(self):
         return (self.status)
+
 
 class Appointment(TimeStampedModel):
     start = models.DateTimeField()
@@ -30,6 +34,6 @@ class Appointment(TimeStampedModel):
     practice = models.ForeignKey(organisation_models.Practice)
     createdby = models.ForeignKey(User, related_name='a_u_createdby')
     modifiedby = models.ForeignKey(User, related_name='a_u_modifiedby')
+
     def __str__(self):
         return str(self.reason)
-

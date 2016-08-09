@@ -1,40 +1,53 @@
 from django.db import models
 from model_utils.models import TimeStampedModel
 from organisations import models as organisations_models
+
+
 # Create your models here.
 
 class ItemType(TimeStampedModel):
     name = models.CharField(max_length=50, unique=True)
     archived = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
+
 
 class ItemCategory(TimeStampedModel):
     class Meta:
         verbose_name_plural = "item categories"
+
     name = models.CharField(max_length=50, unique=True)
     archived = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
+
 
 class VatRate(TimeStampedModel):
     name = models.CharField(max_length=50, unique=True)
     rate = models.DecimalField(max_digits=4, decimal_places=2)
     archived = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
+
 
 class Package(TimeStampedModel):
     name = models.CharField(max_length=50, unique=True)
     archived = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
+
 
 class Unit(TimeStampedModel):
     name = models.CharField(max_length=50, unique=True)
     archived = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
+
 
 class Item(TimeStampedModel):
     name = models.CharField(max_length=100, unique=True)
@@ -47,8 +60,10 @@ class Item(TimeStampedModel):
     sale_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     sale_price_vat_rate = models.ForeignKey(VatRate, related_name='salepricevatrate')
     markup = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+
     def __str__(self):
         return self.name
+
 
 class Medicine(TimeStampedModel):
     item = models.ForeignKey(Item)
@@ -58,5 +73,6 @@ class Medicine(TimeStampedModel):
     location = models.ForeignKey(organisations_models.Location, blank=True, null=True)
     controlled_substance = models.BooleanField(default=False)
     vaccine = models.BooleanField(default=False)
+
     def __str__(self):
         return 'gg'
