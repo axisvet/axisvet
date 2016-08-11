@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'basket',
     'calls',
     'test1',
+    'laboratory',
     'debug_toolbar',
 ]
 

@@ -51,6 +51,8 @@ class BasketProcedure(TimeStampedModel):
 
 
 class BasketSupply(TimeStampedModel):
+    class Meta:
+        verbose_name_plural = "basket supplies"
     basket_item = models.ForeignKey(BasketItem, related_name='basketsupply_basketitem_fk')
 
     def __str__(self):

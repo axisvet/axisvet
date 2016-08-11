@@ -68,18 +68,3 @@ class TreatmentPlan(TimeStampedModel):
 
     def __str__(self):
         return self.treatment_plan
-
-
-# shopping basket of items
-class Item(TimeStampedModel):
-    consultation = models.ForeignKey(Consultation)
-    name = models.CharField(max_length=100)
-    code = models.CharField(max_length=20, blank=True)
-    quantity = models.IntegerField()
-    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    price_with_vat = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-
-    # type = models.ForeignKey(items_models.ItemType, related_name='c_i_type_code')
-    # maybe freeze the type code e.g. medicine, to record what vet actually selected at that moment
-    def __str__(self):
-        return self.name

@@ -12,6 +12,8 @@ class PatientGender(TimeStampedModel):
 
 
 class Species(TimeStampedModel):
+    class Meta:
+        verbose_name_plural = "species"
     name = models.CharField(max_length=30)
 
     def __str__(self):

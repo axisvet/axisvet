@@ -72,9 +72,9 @@ class Item(TimeStampedModel):
     type = models.ForeignKey(ItemType)
     category = models.ForeignKey(ItemCategory, on_delete=models.SET_NULL, blank=True, null=True)
     cost_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    cost_price_vat_rate = models.ForeignKey(VatRate, related_name='costpricevatrate')
+    cost_price_vat_rate = models.ForeignKey(VatRate, related_name='costpricevatrate', null=True, blank=True)
     sale_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    sale_price_vat_rate = models.ForeignKey(VatRate, related_name='salepricevatrate')
+    sale_price_vat_rate = models.ForeignKey(VatRate, related_name='salepricevatrate', null=True, blank=True)
     markup = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     notes = models.CharField(max_length=500, blank=True)
     archived = models.BooleanField(default=False)
@@ -94,23 +94,26 @@ class Medicine(TimeStampedModel):
     vaccine = models.BooleanField(default=False)
 
     def __str__(self):
-        return 'medicine'
+        return self.item.name
 
 
 class Procedure(TimeStampedModel):
     item = models.ForeignKey(Item)
     duration = models.IntegerField()
-    special_procedure = models.ForeignKey(SpecialProcedure)
+    special_procedure = models.ForeignKey(SpecialProcedure, blank=True, null=True)
 
     def __str__(self):
-        return 'procedure'
+        return self.item.name
 
 
 class Supply(TimeStampedModel):
+    class Meta:
+        verbose_name_plural = "supplies"
+
     item = models.ForeignKey(Item)
 
     def __str__(self):
-        return 'supply'
+        return self.item.name
 
 
 class Food(TimeStampedModel):
@@ -119,22 +122,28 @@ class Food(TimeStampedModel):
     nutrition = models.CharField(max_length=500, blank=True)
 
     def __str__(self):
-        return 'food'
+        return self.item.name
 
 
 class LaboratoryAnalysis(TimeStampedModel):
+    class Meta:
+        verbose_name_plural = "laboratory analyses"
+
     item = models.ForeignKey(Item)
     sample = models.ForeignKey(SampleType)
 
     def __str__(self):
-        return 'laboratory'
+        return self.item.name
 
 
-class LaboratoryAnalysisReferenceValues(TimeStampedModel):
-    analysis = models.ForeignKey(LaboratoryAnalysis)
-    species = models.ForeignKey(visitors_models.Species)
-    min = models.DecimalField(max_digits=4, decimal_places=2)
-    max = models.DecimalField(max_digits=4, decimal_places=2)
+
+class LaboratoryAnalysisPanel(TimeStampedModel):
+    class Meta:
+        verbose_name_plural = "laboratory analysis panels"
+
+    item = models.ForeignKey(Item)
+    sample = models.ForeignKey(SampleType)
 
     def __str__(self):
-        return 'laboratory reference values'
+        return self.item.name
+
