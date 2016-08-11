@@ -1,11 +1,10 @@
-from django.db import models
-
-# Create your models here.
+import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from visitors import models as visitors_models
-from consultations import models as consultation_models
+from test1 import models as test1
 from organisations import models as organisation_models
+from django.contrib.contenttypes.fields import GenericRelation
 
 # Create your models here.
 from model_utils.models import TimeStampedModel
@@ -22,6 +21,7 @@ class AppointmentStatus(TimeStampedModel):
 
 
 class Appointment(TimeStampedModel):
+    key = GenericRelation(test1.MyModel)
     start = models.DateTimeField()
     end = models.DateTimeField()
     reason = models.CharField(max_length=500)
@@ -30,10 +30,9 @@ class Appointment(TimeStampedModel):
     status = models.ForeignKey(AppointmentStatus)
     client = models.ForeignKey(visitors_models.Client)
     duration = models.IntegerField()
-    consultation = models.ForeignKey(consultation_models.Consultation, blank=True, null=True)
     practice = models.ForeignKey(organisation_models.Practice)
-    createdby = models.ForeignKey(User, related_name='a_u_createdby')
-    modifiedby = models.ForeignKey(User, related_name='a_u_modifiedby')
+    created_by = models.ForeignKey(User, related_name='a_u_createdby')
+    modified_by = models.ForeignKey(User, related_name='a_u_modifiedby')
 
     def __str__(self):
         return str(self.reason)

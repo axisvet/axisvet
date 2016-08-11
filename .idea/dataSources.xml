@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4075351954">
+  <component name="DataSourceManagerImpl" format="xml" hash="994701225">
     <data-source source="LOCAL" name="Sqlite axisvet" uuid="35735c87-264f-4259-b2df-b431669adde0">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>

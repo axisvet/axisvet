@@ -29,7 +29,8 @@ class ConsultationAdmin(admin.ModelAdmin):
 
     def get_patients(self, obj):
         # return obj.patient.name
-        return ', '.join([str(name) for name in self.patient.all()])
+        #return ', '.join([str(name) for name in self.patient.all()])
+        return 'ok'
 
     # readonly_fields = ['client']
     # list_filter = ['type_code']

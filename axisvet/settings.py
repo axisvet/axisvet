@@ -33,6 +33,7 @@ INTERNAL_IPS = ['127.0.0.1', ]
 # Application definition
 
 INSTALLED_APPS = [
+    #'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'visitors',
     'basket',
     'calls',
+    'test1',
     'debug_toolbar',
 ]
 
@@ -137,4 +139,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+
+STATIC_ROOT = "/Users/davidmurphy/python3devel/"
 STATIC_URL = '/static/'
+

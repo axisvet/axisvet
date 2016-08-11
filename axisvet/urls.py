@@ -21,8 +21,16 @@ from django.conf.urls import include, url
 admin.site.site_header = 'Axis.vet administration'
 
 urlpatterns = [
+    url(r'^grappelli/', include('grappelli.urls')),  # grappelli URLSsx
     url(r'^admin/', admin.site.urls),
+    url(r'', include('test1.urls')),
 ]
+
+
+
+
+
+
 if settings.DEBUG:
     import debug_toolbar
 

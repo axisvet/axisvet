@@ -29,7 +29,7 @@ class Consultation(TimeStampedModel):
         patients = ', '.join([str(name) for name in self.patient.all()])
         # return '%s %s (%s)' % (self.arrival_time, patients, self.client)
         # return self.arrival_time
-        return patients
+        return 'patients in consult: %s with %s' % (patients, self.client)
 
 
 class Observation(TimeStampedModel):
