@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'visitors',
     'basket',
     'calls',
-    'test1',
     'laboratory',
     'debug_toolbar',
 ]

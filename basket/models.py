@@ -1,6 +1,6 @@
 from django.db import models
 from model_utils.models import TimeStampedModel
-from calls import models as calls_models
+
 
 
 # Create your models here.
@@ -23,7 +23,6 @@ class BasketItem(TimeStampedModel):
 
 
 class Basket(TimeStampedModel):
-    CallID = models.ForeignKey(calls_models.Call)
     BasketItemID = models.ForeignKey(BasketItem, related_name='basket_basket_id_fk')
 
 

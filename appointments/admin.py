@@ -5,7 +5,7 @@ from .models import Appointment, AppointmentStatus
 
 
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('reason', 'client', 'status', 'start')
+    list_display = ('reason', 'client', 'get_patient', 'status', 'start')
     list_filter = ['status']
     date_hierarchy = 'start'
     search_fields = ['reason', 'patient__name']
@@ -15,10 +15,7 @@ class AppointmentAdmin(admin.ModelAdmin):
 
     def get_patient(self, obj):
         # return 'ok'
-        #return ', '.join([str(name) for name in obj.patient.all()])
-       return obj.filter(pk=1)
-
-
+        return ', '.join([str(name) for name in obj.patient.all()])
 
 
 class AppointmentStatusAdmin(admin.ModelAdmin):
