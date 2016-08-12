@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'laboratory',
     'debug_toolbar',
 ]
-
+'''
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -71,7 +71,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
-'''
+
 
 ROOT_URLCONF = 'axisvet.urls'
 

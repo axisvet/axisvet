@@ -11,15 +11,14 @@ class PatientInline(admin.StackedInline):
 
 
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'mobile', 'getpatients')
+    list_display = ('first_name', 'last_name', 'mobile', 'get_patients')
+    #now only makes one query, not 100 per page :)
+    def get_queryset(self, obj):
+        qs = super(ClientAdmin, self).get_queryset(obj)
+        return qs.prefetch_related('patient_fk')
 
-    # def get_patients(self, obj):
-    #    p = Patient.objects.filter(client_id=obj.pk)
-    #    return list(p)
-
-    def getpatients(self, obj):
-        p = obj.patient_pk.all()
-        return list(p)
+    def get_patients(self, obj):
+        return list(obj.patient_fk.all())
 
     search_fields = ['first_name', 'last_name', 'street_address', 'zip', 'mobile', 'patient_fk__name']
     inlines = [PatientInline]
