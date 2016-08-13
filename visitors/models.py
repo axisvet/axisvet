@@ -1,15 +1,6 @@
 from django.db import models
+from django.utils.translation import ugettext as _
 from model_utils.models import TimeStampedModel
-
-
-# Create your models here.
-
-class PatientGender(TimeStampedModel):
-    gender = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.gender
-
 
 class Species(TimeStampedModel):
     class Meta:
@@ -37,11 +28,26 @@ class Client(TimeStampedModel):
 
 
 class Patient(TimeStampedModel):
+
+    PATIENT_GENDER_FEMALE = 'female'
+    PATIENT_GENDER_FEMALE_STERILISED = 'female sterilised'
+    PATIENT_GENDER_MALE = 'male'
+    PATIENT_GENDER_MALE_STERILISED = 'male sterilised'
+    PATIENT_GENDER_UNKNOWN = 'unknown'
+
+    PATIENT_GENDER_CHOICES = (
+        (PATIENT_GENDER_FEMALE, _('Female')),
+        (PATIENT_GENDER_FEMALE_STERILISED, _('Female Sterilised')),
+        (PATIENT_GENDER_MALE, _('Male')),
+        (PATIENT_GENDER_MALE_STERILISED, _('Male Sterilised')),
+        (PATIENT_GENDER_UNKNOWN, _('Unknown')),
+    )
+
+    gender = models.CharField(choices=PATIENT_GENDER_CHOICES, max_length=50)
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='patient_fk')
     name = models.CharField(max_length=30)
     species = models.ForeignKey(Species)
     breed = models.CharField(max_length=30, blank=True)
-    gender = models.ForeignKey(PatientGender)
     date_of_birth = models.DateField(blank=True, null=True)
     colour = models.CharField(max_length=30, blank=True)
     remark = models.CharField(max_length=200, blank=True)

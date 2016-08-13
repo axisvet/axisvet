@@ -1,21 +1,21 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Appointment, AppointmentStatus
+from .models import Appointment
 
 
 class AppointmentAdmin(admin.ModelAdmin):
-    list_display = ('reason', 'client', 'get_patient', 'status', 'start')
+    list_display = ('reason', 'client', 'get_patients', 'status', 'start')
     list_filter = ['status']
     date_hierarchy = 'start'
-    search_fields = ['reason', 'patient__name']
+    search_fields = ['reason', 'patients__name']
     # get list of all patients for this consultation
 
-    filter_horizontal = ['patient']
+    filter_horizontal = ['patients']
 
-    def get_patient(self, obj):
+    def get_patients(self, obj):
         # return 'ok'
-        return ', '.join([str(name) for name in obj.patient.all()])
+        return ', '.join([str(name) for name in obj.patients.all()])
 
 
 class AppointmentStatusAdmin(admin.ModelAdmin):
@@ -25,4 +25,3 @@ class AppointmentStatusAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Appointment, AppointmentAdmin)
-admin.site.register(AppointmentStatus, AppointmentStatusAdmin)

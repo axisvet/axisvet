@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Item, ItemType, Medicine, ItemCategory, \
+from .models import Item, Medicine, ItemCategory, \
     VatRate, Package, Unit, SpecialProcedure, SampleType, Procedure, \
     Supply, Food, LaboratoryAnalysis
 
@@ -33,7 +33,6 @@ class ItemAdmin(admin.ModelAdmin):
     inlines = [MedicineInline, ProcedureInline, SupplyInline, FoodInline, LaboratoryAnalysisInline]
 
 admin.site.register(Item, ItemAdmin)
-admin.site.register(ItemType)
 admin.site.register(ItemCategory)
 admin.site.register(VatRate)
 admin.site.register(Package)

@@ -47,13 +47,14 @@ INSTALLED_APPS = [
     'visitors',
     'basket',
     'calls',
-    'laboratory',
+    'labs',
     'debug_toolbar',
 ]
-'''
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -72,6 +73,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+'''
 
 ROOT_URLCONF = 'axisvet.urls'
 
@@ -142,4 +144,6 @@ USE_TZ = True
 
 STATIC_ROOT = "/Users/davidmurphy/python3devel/"
 STATIC_URL = '/static/'
-
+LOCALE_PATHS = [
+    '/Users/davidmurphy/python3devel/translations/locale/',
+]

@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext as _
 from model_utils.models import TimeStampedModel
 from organisations import models as organisations_models
 from visitors import models as visitors_models
@@ -7,14 +8,6 @@ from visitors import models as visitors_models
 # Create your models here.
 
 class SpecialProcedure(TimeStampedModel):
-    name = models.CharField(max_length=50, unique=True)
-    archived = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.name
-
-
-class ItemType(TimeStampedModel):
     name = models.CharField(max_length=50, unique=True)
     archived = models.BooleanField(default=False)
 
@@ -67,10 +60,26 @@ class Unit(TimeStampedModel):
 
 
 class Item(TimeStampedModel):
+
+    ITEM_PROCEDURE = 'procedure'
+    ITEM_MEDICINE = 'medicine'
+    ITEM_SUPPLY = 'supply'
+    ITEM_FOOD = 'food'
+    ITEM_ANALYSIS = 'analysis'
+    ITEM_PANEL = 'panel'
+
+    ITEM_TYPE_CHOICES = (
+        (ITEM_PROCEDURE, _('Procedure')),
+        (ITEM_MEDICINE, _('Medicine')),
+        (ITEM_SUPPLY, _('Supply')),
+        (ITEM_FOOD, _('Food')),
+        (ITEM_ANALYSIS, _('Analysis')),
+        (ITEM_PANEL, _('Panel')),
+    )
+
+    type = models.CharField(choices=ITEM_TYPE_CHOICES, max_length=50)
     name = models.CharField(max_length=100, unique=True)
     code = models.CharField(max_length=20, blank=True)
-    type = models.ForeignKey(ItemType)
-    category = models.ForeignKey(ItemCategory, on_delete=models.SET_NULL, blank=True, null=True)
     cost_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     cost_price_vat_rate = models.ForeignKey(VatRate, related_name='costpricevatrate', null=True, blank=True)
     sale_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
@@ -100,7 +109,17 @@ class Medicine(TimeStampedModel):
 class Procedure(TimeStampedModel):
     item = models.ForeignKey(Item)
     duration = models.IntegerField()
-    special_procedure = models.ForeignKey(SpecialProcedure, blank=True, null=True)
+
+    SPECIAL_PROCEDURE_STERILISATION = 'sterilisation'
+    SPECIAL_PROCEDURE_EUTHANASIA = 'euthanasia'
+
+    SPECIAL_PROCEDURE_CHOICES = (
+        (SPECIAL_PROCEDURE_STERILISATION, _('Sterilisation')),
+        (SPECIAL_PROCEDURE_EUTHANASIA, _('Euthanasia')),
+    )
+
+    special_procedure = models.CharField(choices=SPECIAL_PROCEDURE_CHOICES, max_length=50)
+
 
     def __str__(self):
         return self.item.name
@@ -139,7 +158,7 @@ class LaboratoryAnalysis(TimeStampedModel):
 
 class LaboratoryAnalysisPanel(TimeStampedModel):
     class Meta:
-        verbose_name_plural = "laboratory analysis panels"
+        verbose_name_plural = "laboratory panels"
 
     item = models.ForeignKey(Item)
     sample = models.ForeignKey(SampleType)
