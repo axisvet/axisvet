@@ -153,4 +153,9 @@ LOCALE_PATHS = [
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
+#dummy cache
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}

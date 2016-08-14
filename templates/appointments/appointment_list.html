@@ -1,21 +1,52 @@
 {% extends 'base.html' %}
 
-{% block title %}Today's appointments{% endblock title %}
+{% block title %}Today's appointmentsxx{% endblock title %}
 
 {% block content %}
 
 
-{% for appointment in appointment_list %}
-<div class="appointment">
-    <div class="date">
-        {# appointment.start #}
+  <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Owner</th>
+                <th>Animal</th>
+                <th>Time</th>
+                <th>Reason</th>
+                <th>Status</th>
+                <th>Status txt</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for appointment in object_list %}
+                <tr>
+                    <td>
+                        {{ appointment.client }}
+                    </td>
+                    <td>
+                        {% for patient in appointment.patients.all %}
+                            {{ patient.name }}
+                        {% endfor appointment %}
+                    </td>
+                    <td>
+                        {{ appointment.start }}
+                    </td>
+                    <td>
+                        {{ appointment.reason }}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn btn-{{ appointment.css }}">
+                            {{ appointment.status }}
+                        </button>
+                    </td>
+                    <td><span class="glyphicon glyphicon-search" aria-hidden="true"></span></td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
     </div>
-    <h1><a href="{% url 'appointments:detail' pk=appointment.pk %}">{{ appointment.start }}</a>
-        {% for patient in appointment.patients.all %}
-        {{ patient.name }}
-        {% endfor appointment %}
-        - {{ appointment.reason }}
-    </h1>
-</div>
-{% endfor %}
+
 {% endblock %}
