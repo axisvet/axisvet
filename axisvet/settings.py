@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'labs',
     'debug_toolbar',
 ]
-
+'''
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -73,14 +73,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-'''
+
 
 ROOT_URLCONF = 'axisvet.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/Users/davidmurphy/python3devel/axisvet/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,8 +142,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 
-STATIC_ROOT = "/Users/davidmurphy/python3devel/"
+STATIC_ROOT = "/Users/davidmurphy/python3devel/axisvet/"
 STATIC_URL = '/static/'
 LOCALE_PATHS = [
     '/Users/davidmurphy/python3devel/translations/locale/',
 ]
+
+
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+

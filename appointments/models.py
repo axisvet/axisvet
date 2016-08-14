@@ -34,4 +34,4 @@ class Appointment(TimeStampedModel):
     modified_by = models.ForeignKey(User, related_name='appointments_modified')
 
     def __str__(self):
-        return str(self.status)
+        return str(self.reason)

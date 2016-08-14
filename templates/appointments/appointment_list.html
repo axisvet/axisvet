@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Today's appointments{% endblock title %}
+
+{% block content %}
+
+
+{% for appointment in appointment_list %}
+<div class="appointment">
+    <div class="date">
+        {# appointment.start #}
+    </div>
+    <h1><a href="{% url 'appointments:detail' pk=appointment.pk %}">{{ appointment.start }}</a>
+        {% for patient in appointment.patients.all %}
+        {{ patient.name }}
+        {% endfor appointment %}
+        - {{ appointment.reason }}
+    </h1>
+</div>
+{% endfor %}
+{% endblock %}

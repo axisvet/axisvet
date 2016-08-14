@@ -13,10 +13,16 @@ class AppointmentAdmin(admin.ModelAdmin):
 
     filter_horizontal = ['patients']
 
+
+
+    def get_queryset(self, request):
+        qs = super(AppointmentAdmin, self).get_queryset(request)
+        return qs.select_related('client')
+
+
     def get_patients(self, obj):
         # return 'ok'
-        return ', '.join([str(name) for name in obj.patients.all()])
-
+        return list(obj.patients.all())
 
 class AppointmentStatusAdmin(admin.ModelAdmin):
     # list_display = ('name', 'price', 'type_code')
