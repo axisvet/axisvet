@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c5db647-f68e-4b85-ba5f-9bd3f96c058b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/appointments/urls.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/appointments.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/appointments/appointment_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appointments/admin.py" afterPath="$PROJECT_DIR$/appointments/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appointments/models.py" afterPath="$PROJECT_DIR$/appointments/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appointments/views.py" afterPath="$PROJECT_DIR$/appointments/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/axisvet/settings.py" afterPath="$PROJECT_DIR$/axisvet/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/axisvet/urls.py" afterPath="$PROJECT_DIR$/axisvet/urls.py" />
-    </list>
+    <list default="true" id="4c5db647-f68e-4b85-ba5f-9bd3f96c058b" name="Default" comment="" />
     <ignored path="axisvet.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
