@@ -28,15 +28,15 @@ class ConsultationAdmin(admin.ModelAdmin):
     list_display = ('arrival_time', 'client', 'get_patients')
 
     def get_patients(self, obj):
-        # return obj.patient.name
-        #return ', '.join([str(name) for name in self.patient.all()])
+        # return obj.patients.name
+        # return ', '.join([str(name) for name in self.patients.all()])
         return 'ok'
 
     # readonly_fields = ['client']
     # list_filter = ['type_code']
     # search_fields = ['firstname', 'lastname', 'streetaddress', 'zip', 'mobile', 'patient__name']
     inlines = [ObservationInline, ClinicalNotesInline, DiagnosisInline, TreatmentPlanInline]
-    filter_horizontal = ['patient']
+    filter_horizontal = ['patients']
 
 
 admin.site.register(Consultation, ConsultationAdmin)
@@ -45,4 +45,3 @@ admin.site.register(Observation)
 admin.site.register(Diagnosis)
 admin.site.register(ClinicalNotes)
 admin.site.register(TreatmentPlan)
-

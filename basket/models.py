@@ -3,6 +3,7 @@ from django.utils.translation import ugettext as _
 from model_utils.models import TimeStampedModel
 from visitors.models import Client
 
+
 class Basket(TimeStampedModel):
     BASKET_TYPE_CONSULTATION = 'consultation'
     BASKET_TYPE_COUNTER_SALE = 'counter sale'
@@ -24,7 +25,7 @@ class Basket(TimeStampedModel):
     def total_sale_price(self):
         return self.items.aggregate(models.Sum('sale_price'))
 
-    # client = models.ForeignKey(Client)
+        # client = models.ForeignKey(Client)
 
 
 class BasketItem(TimeStampedModel):
@@ -91,6 +92,7 @@ class BasketAnalysis(TimeStampedModel):
 
     def __str__(self):
         return 'basket analysis'
+
 
 class BasketPanel(TimeStampedModel):
     basket_item = models.ForeignKey(BasketItem, related_name='basket_panels')

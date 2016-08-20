@@ -11,7 +11,7 @@
     <!-- right-aligned header panel for button, form... -->
     <a href="{% url 'appointments:create' %}">
         <button class='btn btn-lg btn-success pull-right'>
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <span class="glyphicons glyphicons-lg glyphicons-plus" aria-hidden="true"></span>
             New Appointment
         </button>
     </a>
@@ -53,7 +53,7 @@
                             {{ appointment.reason }}
                         </td>
                         <td>
-                            {{ appointment.start.time }}
+                            {{ appointment.start }}
                         </td>
                         <td>
                             {{ appointment.attending_staff }}
@@ -61,7 +61,9 @@
                         <td>
                             <div class="btn-group">
                                 <button type="submit" name="{{ appointment.css_status_class }}"
-                                        class="btn btn btn-{{ appointment.css_status_class }} text-capitalize">
+                                        class="btn btn btn-{{ appointment.css_status_class }} text-capitalize"
+                                        data-toggle="tooltip" data-container="body" data-placement="left"
+                                        title="Click to set to '{{ appointment.css_next_step_class|title }}'">
                                     {{ appointment.status }}
                                 </button>
 

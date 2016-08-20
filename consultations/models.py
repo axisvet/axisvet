@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from visitors import models as visitors_models
-from items import models as items_models
+from smart_selects.db_fields import ChainedManyToManyField
 
 from model_utils.models import TimeStampedModel
 
@@ -17,7 +17,14 @@ class Status(TimeStampedModel):
 
 class Consultation(TimeStampedModel):
     client = models.ForeignKey(visitors_models.Client)
-    patient = models.ManyToManyField(visitors_models.Patient)
+    # patient = models.ManyToManyField(visitors_models.Patient)
+
+    patients = ChainedManyToManyField(
+        visitors_models.Patient,
+        chained_field="client",
+        chained_model_field="client",
+        auto_choose=True,
+    )
     arrival_time = models.DateTimeField()
     start_time = models.DateTimeField()
     finish_time = models.DateTimeField()
