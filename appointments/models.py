@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from visitors import models as visitors_models
-from organisations import models as organisation_models
+from smart_selects.db_fields import ChainedManyToManyField
 from model_utils.models import TimeStampedModel
 
 
@@ -23,15 +23,42 @@ class Appointment(TimeStampedModel):
 
     status = models.CharField(choices=STATUS_CHOICES, max_length=50)
     start = models.DateTimeField()
-    end = models.DateTimeField()
     reason = models.CharField(max_length=500)
-    patients = models.ManyToManyField(visitors_models.Patient)
-    attending_staff = models.ForeignKey(User)
     client = models.ForeignKey(visitors_models.Client)
+    # patients = models.ManyToManyField(visitors_models.Patient)
+
+    patients = ChainedManyToManyField(
+        visitors_models.Patient,
+        chained_field="client",
+        chained_model_field="client",
+        auto_choose=True,
+    )
+
+    attending_staff = models.ForeignKey(User)
     duration = models.IntegerField()
-    practice = models.ForeignKey(organisation_models.Practice)
     created_by = models.ForeignKey(User, related_name='appointments_created')
     modified_by = models.ForeignKey(User, related_name='appointments_modified')
+
+    @property
+    def css_status_class(self):
+        if self.status == self.STATUS_UPCOMING:
+            css_status = 'default'
+
+        elif self.status == self.STATUS_ARRIVED:
+            css_status = 'warning'
+
+        elif self.status == self.STATUS_IN_CONSULT:
+            css_status = 'success'
+
+        elif self.status == self.STATUS_WAITING_TO_PAY:
+            css_status = 'danger'
+
+        elif self.status == self.STATUS_PAYMENT_COMPLETE:
+            css_status = 'info'
+
+        else:
+            css_status = 'info'
+        return css_status
 
     def __str__(self):
         return str(self.reason)

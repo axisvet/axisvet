@@ -1,5 +1,5 @@
 body {
-  padding-top: 70px;
+  padding-top: 50px; /* originally 70 */
   padding-bottom: 30px;
 }
 
@@ -15,4 +15,8 @@ body {
 
 .theme-showcase .navbar .container {
   width: auto;
+}
+/* make table text bigger than default */
+.table-striped {
+  font-size: 20px;
 }

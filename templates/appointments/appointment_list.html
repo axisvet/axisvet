@@ -1,52 +1,82 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
+{% load i18n %}
 
-{% block title %}Today's appointmentsxx{% endblock title %}
+{% block title %}
+
+    <!-- header text with icon -->
+    <span>
+        <span class="glyphicons glyphicons-calendar" aria-hidden="true"></span>
+        Today's Appointments
+    </span>
+    <!-- right-aligned header panel for button, form... -->
+    <a href="{% url 'appointments:create' %}">
+        <button class='btn btn-lg btn-success pull-right'>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            New Appointment
+        </button>
+    </a>
+{% endblock title %}
 
 {% block content %}
 
-
-  <div class="row">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Owner</th>
-                <th>Animal</th>
-                <th>Time</th>
-                <th>Reason</th>
-                <th>Status</th>
-                <th>Status txt</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            {% for appointment in object_list %}
+    <div class="row">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <table class="table table-striped">
+                <thead>
                 <tr>
-                    <td>
-                        {{ appointment.client }}
-                    </td>
-                    <td>
-                        {% for patient in appointment.patients.all %}
-                            {{ patient.name }}
-                        {% endfor appointment %}
-                    </td>
-                    <td>
-                        {{ appointment.start }}
-                    </td>
-                    <td>
-                        {{ appointment.reason }}
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn btn-{{ appointment.css }}">
-                            {{ appointment.status }}
-                        </button>
-                    </td>
-                    <td><span class="glyphicon glyphicon-search" aria-hidden="true"></span></td>
+                    <th>{% trans 'Animal' %}</th>
+                    <th>{% trans 'Owner' %}</th>
+                    <th>{% trans 'Reason' %}</th>
+                    <th>{% trans 'Time' %}</th>
+                    <th>{% trans 'Vet' %}</th>
+                    <th>{% trans 'Status' %}</th>
                 </tr>
-            {% endfor %}
+                </thead>
+                <tbody>
 
-            </tbody>
-        </table>
+                {% for appointment in appointments %}
+                    <tr>
+                        <td>
+                            {% for patient in appointment.patients.all %}
+                                <div>
+                                    <span class="glyphicons glyphicons-{{ patient.css_species_class }}"
+                                          aria-hidden="true" style="font-size:20px"></span>
+                                    <strong> {{ patient.name }}</strong>
+                                </div>
+                            {% endfor appointment %}
+                        </td>
+                        <td>
+                            {{ appointment.client }}
+                        </td>
+                        <td>
+                            {{ appointment.reason }}
+                        </td>
+                        <td>
+                            {{ appointment.start.time }}
+                        </td>
+                        <td>
+                            {{ appointment.attending_staff }}
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="submit" name="{{ appointment.css_status_class }}"
+                                        class="btn btn btn-{{ appointment.css_status_class }} text-capitalize">
+                                    {{ appointment.status }}
+                                </button>
 
+
+                                <!-- display dropdown if there is a call to action -->
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </form>
     </div>
+
+    {% include 'snippets/pagination.html' %}
 
 {% endblock %}

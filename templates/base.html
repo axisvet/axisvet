@@ -1,6 +1,5 @@
-{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +9,22 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
+    {% load staticfiles %}
+
     <title>Axis.vet - veterinary practice management made simple</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-
-    <!-- Bootstrap theme -->
     <link href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet"
+          href="{% static 'bootstrap/bootstrap2-datetimepicker/css/bootstrap-datetimepicker.min.css' %}"/>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{% static 'bootstrap/dist/css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
 
+
+
+    <script type="text/javascript" src="{% static 'bootstrap/dist/js/transition.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/dist/js/collapse.js' %}"></script>
     <!-- Custom styles for this template -->
     <link href="{% static 'css/theme.css' %}" rel="stylesheet">
 
@@ -31,7 +36,6 @@
 </head>
 
 <body>
-
 <!-- Fixed navbar -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -68,113 +72,55 @@
     </div>
 </nav>
 
-<div class="container theme-showcase" role="main"><!--main div-->
+
+<div class="container" role="main"><!--main div-->
 
     <div class="page-header">
         <h1>{% block title %}Welcome to Axis.vet{% endblock title %}</h1>
     </div>
 
+    <!-- display messages-->
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li id="message_{{ forloop.counter }}"
+                        {% if message.tags %}
+                    class="{{ message.tags }}"
+                        {% endif %}>
+                    {{ message }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <!-- end display messages -->
+
 
     {% block content %}
-
-
-
-
-    <div class="row">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                    <button type="button" class="btn btn btn-default">Upcoming</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>
-                    <button type="button" class="btn btn btn-success">In consult</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>
-                    <button type="button" class="btn btn btn-danger">Waiting to pay</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-
-
-    <div class="page-header">
-        <h1>Badges</h1>
-    </div>
-    <p>
-        <a href="#">Inbox <span class="badge">42</span></a>
-    </p>
-    <ul class="nav nav-pills" role="tablist">
-        <li role="presentation" class="active"><a href="#">Home <span class="badge">42</span></a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-        <li role="presentation"><a href="#">Messages <span class="badge">3</span></a></li>
-    </ul>
-
-
-    <div class="page-header">
-        <h1>Alerts</h1>
-    </div>
-    <div class="alert alert-success" role="alert">
-        <strong>Well done!</strong> You successfully read this important alert message.
-    </div>
-    <div class="alert alert-info" role="alert">
-        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-    </div>
-    <div class="alert alert-warning" role="alert">
-        <strong>Warning!</strong> Best check yo self, you're not looking too good.
-    </div>
-    <div class="alert alert-danger" role="alert">
-        <strong>Oh snap!</strong> Change a few things up and try submitting again.
-    </div>
-
-    <div class="page-header">
-        <h1>Wells</h1>
-    </div>
-    <div class="well">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet
-            non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel
-            scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non
-            commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla
-            sed consectetur.</p>
-    </div>
-
     {% endblock content %}
 
-</div> <!-- /container -->
+</div> <!-- /main div -->
 
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script type="text/javascript" src="{% static 'jquery/jquery-2.2.4.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'moment/min/moment-with-locales.min.js' %}"></script>
+<script type="text/javascript"
+        src="{% static 'bootstrap/bootstrap2-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: "dd MM yyyy - h:ii",
+        autoclose: true,
+        todayBtn: true,
+        startDate: new Date(),
+        minuteStep: 10
+    });
+</script>
+
 <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{% static 'bootstrap/dist/js/ie10-viewport-bug-workaround.js' %}"></script>

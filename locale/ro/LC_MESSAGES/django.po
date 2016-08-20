@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-13 18:11+0300\n"
+"POT-Creation-Date: 2016-08-15 10:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,26 @@ msgstr ""
 
 #: appointments/models.py:21
 msgid "Payment Complete"
+msgstr ""
+
+#: basket/models.py:14
+msgid "Consultation"
+msgstr ""
+
+#: basket/models.py:15
+msgid "Counter Sale"
+msgstr ""
+
+#: basket/models.py:16
+msgid "Estimate"
+msgstr ""
+
+#: basket/models.py:17
+msgid "Repeat Prescription"
+msgstr ""
+
+#: basket/models.py:18
+msgid "Web Sale"
 msgstr ""
 
 #: items/models.py:72
@@ -69,6 +89,26 @@ msgstr ""
 
 #: items/models.py:118
 msgid "Euthanasia"
+msgstr ""
+
+#: templates/appointments/appointment_list.html:13
+msgid "Owner"
+msgstr ""
+
+#: templates/appointments/appointment_list.html:14
+msgid "Animal"
+msgstr ""
+
+#: templates/appointments/appointment_list.html:15
+msgid "Time"
+msgstr ""
+
+#: templates/appointments/appointment_list.html:16
+msgid "Reason"
+msgstr ""
+
+#: templates/appointments/appointment_list.html:17
+msgid "Status"
 msgstr ""
 
 #: visitors/models.py:39

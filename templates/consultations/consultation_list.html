@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load i18n %}
+
+{% block title %}
+
+    <!-- header text with icon -->
+    <span>
+        <span class="glyphicons glyphicons-stethoscope" aria-hidden="true"></span>
+        Consultations List
+    </span>
+    <!-- right-aligned header panel for button, form... -->
+    <a href="{% url 'consultations:create' %}">
+        <button class='btn btn-lg btn-success pull-right'>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            New Consultation
+        </button>
+    </a>
+{% endblock title %}
+
+{% block content %}
+
+
+<h3>consult list stuff here</h3>
+
+
+{% endblock %}

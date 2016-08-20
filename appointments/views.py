@@ -1,30 +1,32 @@
-#appointments/view.py
-from django.shortcuts import render
+# appointments/view.py
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from braces.views import LoginRequiredMixin
-from django.core.urlresolvers import reverse
-from django.views.decorators.cache import cache_page
-
 from .models import Appointment
+from .forms import AppointmentForm
 
-class AppointmentListView(ListView):
+
+class AppointmentListView(LoginRequiredMixin, ListView):
+    template_name = 'appointments/appointment_list.html'
+    # friendly template context
+    context_object_name = 'appointments'
+    paginate_by = 50
+
     def get_queryset(self):
-        qs = Appointment.objects.prefetch_related('client','patients')
-        for r in qs:
-            if r.status == r.STATUS_UPCOMING: r.css = 'default'
-            if r.status == r.STATUS_ARRIVED: r.css = 'warning'
-            if r.status == r.STATUS_IN_CONSULT: r.css = 'success'
-            if r.status == r.STATUS_WAITING_TO_PAY: r.css = 'danger'
-            if r.status == r.STATUS_PAYMENT_COMPLETE: r.css = 'info'
-        return qs
+        qs = Appointment.objects.prefetch_related('client', 'patients',
+                                                  'patients__species', 'attending_staff__appointment_set')
+
+        return list(qs)
 
 
 class AppointmentDetailView(LoginRequiredMixin, DetailView):
     model = Appointment
 
+
+class AppointmentUpdateStatusView(LoginRequiredMixin, UpdateView):
+    model = Appointment
+
+
 class AppointmentCreateView(LoginRequiredMixin, CreateView):
     model = Appointment
-
-class AppointmentUpdateView(LoginRequiredMixin, UpdateView):
-    model = Appointment
-
+    form_class = AppointmentForm
+    template_name = 'appointments/appointment_create.html'

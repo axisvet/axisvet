@@ -33,7 +33,6 @@ INTERNAL_IPS = ['127.0.0.1', ]
 # Application definition
 
 INSTALLED_APPS = [
-    #'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,9 +47,13 @@ INSTALLED_APPS = [
     'basket',
     'calls',
     'labs',
+    'crispy_forms',
     'debug_toolbar',
+    'smart_selects',
 ]
+
 '''
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -63,7 +66,7 @@ MIDDLEWARE = [
 ]
 
 '''
-#deprecated in Django 1.10 but debug-toolbar won't work with MIDDLEWARE above
+# deprecated in Django 1.10 but debug-toolbar won't work with MIDDLEWARE above
 MIDDLEWARE_CLASSES = (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,7 +75,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
-
 
 
 ROOT_URLCONF = 'axisvet.urls'
@@ -84,6 +86,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'axisvet.processors.nav_bar_alerts',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -149,13 +152,12 @@ LOCALE_PATHS = [
 ]
 
 
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-#dummy cache
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-    }
-}
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+USE_DJANGO_JQUERY = False
+
+JQUERY_URL = 'static/jquery/jquery-2.2.4.min.js'

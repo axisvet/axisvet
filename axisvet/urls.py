@@ -25,12 +25,24 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+    url(r'^chaining/', include('smart_selects.urls')),
+]
+
+urlpatterns += [
     url(r'^appointments/', include('appointments.urls', namespace='appointments')),
 ]
 
+urlpatterns += [
+    url(r'^consultations/', include('consultations.urls', namespace='consultations')),
+]
+
+urlpatterns += [
+    url(r'^visitors/', include('visitors.urls', namespace='visitors')),
+]
+
+
 if settings.DEBUG:
     import debug_toolbar
-
     urlpatterns += [
         url(r'^__debug__/', include(debug_toolbar.urls)),
     ]

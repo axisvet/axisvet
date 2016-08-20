@@ -1,4 +1,4 @@
-#appointments/url.py
+# appointments/url.py
 
 # when a pattern matches, Django imports and calls the given view, which receives HttpRequests + args in "()"
 # request /articles/2005/03/ would be parsed by
@@ -28,6 +28,16 @@ urlpatterns = [
         regex=r'^(?P<pk>\d+)/$',
         view=views.AppointmentDetailView.as_view(),
         name='detail'
-    )
+    ),
+    url(
+        regex=r'^updatestatus/(?P<pk>\d+)/$',
+        view=views.AppointmentUpdateStatusView.as_view(),
+        name='update_status'
+    ),
+    url(
+        regex=r'^new/$',
+        view=views.AppointmentCreateView.as_view(),
+        name='create'
+    ),
 
 ]
