@@ -2,18 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from visitors import models as visitors_models
 from smart_selects.db_fields import ChainedManyToManyField
-
+from django.utils.timezone import now
 from model_utils.models import TimeStampedModel
 
-
-# Create your models here.
 
 class Status(TimeStampedModel):
     class Meta:
         verbose_name_plural = "status"
 
     status = models.CharField(max_length=20)
-
 
 class Consultation(TimeStampedModel):
     client = models.ForeignKey(visitors_models.Client)
@@ -25,17 +22,14 @@ class Consultation(TimeStampedModel):
         chained_model_field="client",
         auto_choose=True,
     )
-    arrival_time = models.DateTimeField()
-    start_time = models.DateTimeField()
-    finish_time = models.DateTimeField()
+    start = models.DateTimeField()
+    finish = models.DateTimeField(blank=True, null=True)
     attending_staff = models.ForeignKey(User)
+    created_by = models.ForeignKey(User, related_name='consultations_created')
+    modified_by = models.ForeignKey(User, related_name='consultations_modified')
 
-    # maybe just update appointment status -> waiting to pay when consult finishes?
-    # status = models.ForeignKey(Status)
     def __str__(self):
-        patients = ', '.join([str(name) for name in self.patient.all()])
-        # return '%s %s (%s)' % (self.arrival_time, patients, self.client)
-        # return self.arrival_time
+        patients = ', '.join([str(name) for name in self.patients.all()])
         return 'patients in consult: %s with %s' % (patients, self.client)
 
 

@@ -20,11 +20,23 @@
 {% endblock title %}
 
 {% block content %}
-
     <form action="{% url 'consultations:create' %}" method="post">
         {% csrf_token %}
+
         {{ form.as_p }}
-        <input type="submit" name="submit">
+        <p>====== parent form above (form.as_p) ======</p>
+        <p>====== inline forms below (for formset in inlines) ======</p>
+        {% for formset in inlines %}
+            <div id="{{ formset.prefix }}">
+                {% for subform in formset.forms %}
+                    <table>
+                        {{ subform.as_table }}
+                    </table>
+                {% endfor %}
+                {{ formset.management_form }}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Add client" class="submit"/>
     </form>
 
 {% endblock %}

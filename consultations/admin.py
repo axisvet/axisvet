@@ -25,7 +25,7 @@ class TreatmentPlanInline(admin.StackedInline):
 
 
 class ConsultationAdmin(admin.ModelAdmin):
-    list_display = ('arrival_time', 'client', 'get_patients')
+    list_display = ('client', 'get_patients')
 
     def get_patients(self, obj):
         # return obj.patients.name

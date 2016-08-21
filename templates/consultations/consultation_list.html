@@ -18,9 +18,7 @@
 {% endblock title %}
 
 {% block content %}
-
-
-<h3>consult list stuff here</h3>
-
-
+    {% for consultation in consultations %}
+        {{ consultation }}
+    {% endfor %}
 {% endblock %}
