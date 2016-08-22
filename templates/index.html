@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  class="full">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +29,7 @@
     <link href="{% static 'css/theme.css' %}" rel="stylesheet">
 
     <!-- fullscreen background image -->
-    <!-- <link href="{% static 'css/full.css' %}" rel="stylesheet"> -->
+     <link href="{% static 'css/full.css' %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -70,7 +70,7 @@
             <ul class="nav navbar-nav nav">
                 <li {% if 'appointments' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'appointments:list' %}">
-                        <span class="glyphicons glyphicons-home" style="font-size:24px" aria-hidden="true"></span>
+                        <span class="glyphicons glyphicons-xl glyphicons-home" aria-hidden="true"></span>
                         Reception
                         <!-- display label indicating number of clients waiting to pay -->
                         {% if TO_PAY_COUNT %}
@@ -81,44 +81,34 @@
                 </li>
                 <li {% if 'clients' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'visitors:client_list' %}">
-                        <span class="glyphicons glyphicons-group" style="font-size:24px" aria-hidden="true"></span>
+                        <span class="glyphicons glyphicons-xl glyphicons-group" aria-hidden="true"></span>
                         Clients</a>
                 </li>
                 <li {% if 'patients' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'visitors:patient_list' %}">
-                        <span class="glyphicons glyphicons-cat" style="font-size:24px" aria-hidden="true"></span>
+                        <span class="glyphicons glyphicons-xl glyphicons-cat" aria-hidden="true"></span>
                         Patients</a>
                 </li>
                 <li {% if 'consultations' in request.path %}class="active"{% endif %}>
                     <a href="{% url 'consultations:list' %}">
-                        <span class="glyphicons glyphicons-stethoscope" style="font-size:24px"
-                              aria-hidden="true"></span>
+                        <span class="glyphicons glyphicons-xl glyphicons-stethoscope" aria-hidden="true"></span>
                         Consultations</a>
                 </li>
-                <!--
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-                -->
+
             </ul>
             <p class="navbar-text navbar-right">Signed in as {{ request.user }}</p>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-<div class="container theme-showcase" role="main">
+<!-- ========================================-->
+<!-- ============== main div ================-->
+<!-- ========================================-->
 
-    <!-- display messages-->
+<div class="container main-content img-rounded" role="main">
+
+
+    <!-- ========= start alerts panel ===========-->
     {% if messages %}
         {% for message in messages %}
             <div class="alert alert-success alert-dismissible" role="alert">
@@ -129,36 +119,103 @@
             </div>
         {% endfor %}
     {% endif %}
-    <!-- end display messages -->
+    <!-- =========== end alerts panel ===========-->
 
-    <div class="page-header">
-        <h1>
-            {% block title %}
-                <span>Axis.vet</span>
-            {% endblock title %}
-        </h1>
-        <hr/>
-        {% block content %}
-            <p>block content in index.html</p>
-        {% endblock content %}
+    <style>
+        .blue {
+            background: blue
+        }
+
+        .green {
+            background: green
+        }
+
+        .red {
+            background: red
+        }
+
+        .pink {
+            background: pink
+        }
+
+        .purple {
+            background: purple
+        }
+
+        .orange {
+            background: orange
+        }
+
+        .lightblue {
+            background: lightblue
+        }
+    </style>
 
 
-    </div> <!-- /container -->
+    <!-- ============ start headline =============-->
 
-    <!-- mini calendar for date/time entry fields -->
-    <script type="text/javascript">
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <h2>{{ page_title }}</h2>
+        </div>
 
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        });
+        <div class="col-md-6 col-sm-6 col-xs-12 search-box">
+            <form action="" method="GET" class="search-form">
 
-        $(".form_datetime").datetimepicker({
-            format: "yyyy-mm-dd hh:ii",
-            autoclose: true,
-            todayBtn: true,
-            startDate: new Date(),
-            minuteStep: 10
-        });
-    </script>
+                <div class="form-group form-group-lg has-feedback">
+                    <label class="sr-only" for="search">Search</label>
+                    <div class="col-xs-8 search-panel">
+
+                            <input type="text" class="form-control" name="q" id="search"
+                                   placeholder="Search">
+                              <span class="glyphicons glyphicons-group form-control-feedback" style="font-size:24px"></span>
+
+                    </div>
+
+                    <div class="col-xs-4 search-button">
+                        <button type="submit" class="btn btn-lg btn-success">
+                            <span class="glyphicons glyphicons-lg glyphicons-search" aria-hidden="true"></span>
+                            <span class="hidden-sm hidden-xs"> Searchxxxx</span></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- ============ end headline ==============-->
+
+
+
+
+    <!-- ============ main content  ==============-->
+    {% block content %}
+        <p>block content in index.html</p>
+    {% endblock content %}
+    <!-- ========== end  main content  ===========-->
+
+
+    <!-- ========================================-->
+    <!-- =========== end  main div ==============-->
+    <!-- ========================================-->
+</div>
+
+
+<!-- mini calendar for date/time entry fields -->
+<script type="text/javascript">
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
+
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        startDate: new Date(),
+        minuteStep: 10
+    });
+</script>
+
 </body>
 </html>

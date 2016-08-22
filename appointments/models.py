@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils.translation import ugettext as _
 from django.contrib.auth.models import User
 from visitors import models as visitors_models
+from consultations.models import Consultation
 from smart_selects.db_fields import ChainedManyToManyField
 from model_utils.models import TimeStampedModel
 
@@ -36,6 +37,7 @@ class Appointment(TimeStampedModel):
     )
     attending_staff = models.ForeignKey(User, blank=True, null=True)
     duration = models.IntegerField()
+    consultation = models.OneToOneField(Consultation, blank=True, null=True, related_name="app_con")
     created_by = models.ForeignKey(User, related_name='appointments_created')
     modified_by = models.ForeignKey(User, related_name='appointments_modified')
 
@@ -77,8 +79,9 @@ class Appointment(TimeStampedModel):
             css_next_step = ''
         return css_next_step
 
-    # def get_absolute_url(self):
-    #    return reverse('appointments:detail', kwargs={'pk': self.pk})
+    # automatically called by CreateView and UpdateView, no need to use success_url in view
+    def get_absolute_url(self):
+        return reverse('appointments:detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return str(self.reason)

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'list.html' %}
 {% load i18n %}
 
 {% block title %}
@@ -16,54 +16,50 @@
             <span class="glyphicons glyphicons-group form-control-feedback" style="font-size:24px"></span>
         </div>
         <button type="submit" class="btn btn-lg btn-success">
-            <span class="glyphicons glyphicons-search" aria-hidden="true"></span>Search</button>
+            <span class="glyphicons glyphicons-search" aria-hidden="true"></span>Search
+        </button>
     </form>
 
 {% endblock title %}
 
+{% block list_table %}
 
-{% block content %}
-    <!-- check search results > 0 -->
-    {% if clients %}
-        <div class="row">
-            <!-- object count logic will go here -->
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>{% trans 'Name' %}</th>
-                    <th>{% trans 'Patient' %}</th>
-                    <th>{% trans 'Street address' %}</th>
-                    <th>{% trans 'Mobile' %}</th>
-                </tr>
-                </thead>
-                <tbody>
+    <!-- ========================================= ---->
+    <!-- ======= start table rows for list ======= ---->
+    <!-- ========================================= ---->
 
-                <!-- loop over objects to create new rows -->
-                {% for client in clients %}
-                    <tr>
-                        <td>{{ client.first_name }} {{ client.last_name }}</td>
-                        <td>{% for patient in client.patients.all %}
-                            <div>
-                                <span class="glyphicons glyphicons-{{ patient.css_gender_class }}" aria-hidden="true" style="font-size:20px"></span>
-                                <span class="glyphicons glyphicons-{{ patient.css_species_class }}" aria-hidden="true" style="font-size:20px"></span>
-                                {{ patient.name }}
-                            </div>
-                        {% endfor patient %}</td>
-                        <td>{{ client.street_address }}</td>
-                        <td>{{ client.mobile }}</td>
-                    </tr>
-                {% endfor %}
+    {% for row in clients %}
+        <tr>
+            <td data-title="{{ column_list.0 }}">
+                {{ row.first_name }} {{ row.last_name }}
+            </td>
+            <td data-title="{{ column_list.1 }}">
+                {% for patient in row.patients.all %}
+                    <div>
+                        <span class="glyphicons glyphicons-md
+                        glyphicons-{{ patient.css_species_class }}" aria-hidden="true">
+                        </span>
+                        <strong>{{ patient.name }}</strong>
+                    </div>
+                {% endfor patient %}
+            </td>
+            <td data-title="{{ column_list.2 }}">
+                {{ row.street_address }}
+            </td>
+            <td data-title="{{ column_list.3 }}">
+                {{ row.mobile }}
+            </td>
+            <td data-title="{{ column_list.4 }}">
+                (empty)
+            </td>
+            <td>
+                (empty)
+            </td>
+        </tr>
+    {% endfor row %}
 
-                </tbody>
-            </table>
-        </div>
+    <!-- ========================================= ---->
+    <!-- ======== end table rows for list ======== ---->
+    <!-- ========================================= ---->
 
-    {% else %}
-        <div class="page-header">
-            <h2>No clients found</h2>
-        </div>
-    {% endif %}
-
-    {% include 'snippets/pagination.html' %}
-
-{% endblock content %}
+{% endblock list_table %}

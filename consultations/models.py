@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from visitors import models as visitors_models
 from smart_selects.db_fields import ChainedManyToManyField
-from django.utils.timezone import now
+from django.urls import reverse
 from model_utils.models import TimeStampedModel
 
 
@@ -11,6 +11,7 @@ class Status(TimeStampedModel):
         verbose_name_plural = "status"
 
     status = models.CharField(max_length=20)
+
 
 class Consultation(TimeStampedModel):
     client = models.ForeignKey(visitors_models.Client)
@@ -27,6 +28,10 @@ class Consultation(TimeStampedModel):
     attending_staff = models.ForeignKey(User)
     created_by = models.ForeignKey(User, related_name='consultations_created')
     modified_by = models.ForeignKey(User, related_name='consultations_modified')
+
+    # automatically called by CreateView and UpdateView, no need to use success_url in view
+    def get_absolute_url(self):
+        return reverse('consultations:detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         patients = ', '.join([str(name) for name in self.patients.all()])

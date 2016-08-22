@@ -1,0 +1,9 @@
+
+{% for patient in row.patients.all %}
+    <div>
+        <span class="glyphicons glyphicons-md
+                glyphicons-{{ patient.css_species_class }}" aria-hidden="true">
+        </span>
+        <strong>{{ patient.name }}</strong>
+    </div>
+{% endfor patient %}

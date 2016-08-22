@@ -1,0 +1,38 @@
+{# used for list pages with a table #}
+{% extends 'index.html' %}
+{% load i18n %}
+
+{% block content %}
+
+    <form action="#" method="post">
+        {% csrf_token %}
+
+        <div class="row">
+            <div id="no-more-tables">
+                <table class="table table-striped cf col-md-12">
+                    <thead class="cf">
+                    <tr>
+                        <!-- display table headers from context variable in view -->
+                        {% for header in column_list %}
+                            <th>{{ header }}</th>
+                        {% endfor header %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% block list_table %}
+
+                        <!-- ========================================= ---->
+                        <!-- ==========  table rows for list ========= ---->
+                        <!-- ========================================= ---->
+
+                    {% endblock list_table %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </form>
+
+    {% include 'snippets/pagination.html' %}
+
+{% endblock %}

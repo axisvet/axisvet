@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'list.html' %}
 {% load i18n %}
 
 {% block title %}
@@ -23,60 +23,41 @@
 
 {% endblock title %}
 
+{% block list_table %}
 
-{% block content %}
-    <!-- check search results > 0 -->
-    {% if patients %}
-        <div class="row">
-            <!-- object count logic will go here -->
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th>
-                        <span class="glyphicons glyphicons-gender-intersex" aria-hidden="true"></span>
-                        {% trans 'Name' %}
-                    </th>
-                    <th>{% trans 'Weight (kg)' %}</th>
-                    <th></th>
-                    <th>{% trans 'Breed' %}</th>
-                    <th>{% trans 'Owner' %}</th>
-                </tr>
-                </thead>
-                <tbody>
+    <!-- ========================================= ---->
+    <!-- ======= start table rows for list ======= ---->
+    <!-- ========================================= ---->
 
-                <!-- loop over objects to create new rows -->
-                {% for patient in patients %}
-                    <!-- place icon for species -->
+    {% for row in patients %}
+        <tr>
+            <td data-title="{{ column_list.0 }}">
+                {% if row.css_species_class %}
+                    <span class="glyphicons glyphicons-{{ row.css_species_class }}" aria-hidden="true"
+                          style="font-size:24px"> </span>
+                {% endif %}
+            </td>
+            <td data-title="{{ column_list.1 }}">
+                <span class="glyphicons glyphicons-{{ row.css_gender_class }}" aria-hidden="true"></span>
+                <strong>{{ row.name }}</strong>
+            </td>
+            <td data-title="{{ column_list.2 }}">
+                {{ row.weight }}
+            </td>
+            <td data-title="{{ column_list.3 }}">
+                {{ row.breed }}
+            </td>
+            <td data-title="{{ column_list.4 }}">
+                {{ row.client }}
+            </td>
+            <td>
+                (empty)
+            </td>
+        </tr>
+    {% endfor row %}
 
-                    <tr>
-                        <td>
-                            {% if patient.css_species_class %}
-                                <span class="glyphicons glyphicons-{{ patient.css_species_class }}" aria-hidden="true"
-                                      style="font-size:24px"> </span>
-                            {% endif %}
-                        </td>
-                        <td>
-                            <span class="glyphicons glyphicons-{{ patient.css_gender_class }}" aria-hidden="true"></span>
-                            <strong>{{ patient.name }}</strong>
-                        </td>
-                        <td>{{ patient.weight }}</td>
-                        <td></td>
-                        <td>{{ patient.breed }}</td>
-                        <td>{{ patient.client }}</td>
-                    </tr>
-                {% endfor %}
+    <!-- ========================================= ---->
+    <!-- ======== end table rows for list ======== ---->
+    <!-- ========================================= ---->
 
-                </tbody>
-            </table>
-        </div>
-
-    {% else %}
-        <div class="page-header">
-            <h2>No patients found</h2>
-        </div>
-    {% endif %}
-
-    {# include 'snippets/pagination.html' #}
-
-{% endblock content %}
+{% endblock list_table %}

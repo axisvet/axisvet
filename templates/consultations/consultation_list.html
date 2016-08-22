@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'list.html' %}
 {% load i18n %}
 
 {% block title %}
@@ -11,14 +11,53 @@
     <!-- right-aligned header panel for button, form... -->
     <a href="{% url 'consultations:create' %}">
         <button class='btn btn-lg btn-success pull-right'>
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <span class="glyphicons glyphicons-lg glyphicons-plus" aria-hidden="true"></span>
             New Consultation
         </button>
     </a>
+
 {% endblock title %}
 
-{% block content %}
-    {% for consultation in consultations %}
-        {{ consultation }}
-    {% endfor %}
-{% endblock %}
+{% block list_table %}
+
+    <!-- ========================================= ---->
+    <!-- ======= start table rows for list ======= ---->
+    <!-- ========================================= ---->
+
+    {% for row in consultations %}
+        <tr>
+            <td data-title="{{ column_list.0 }}">
+                {% for patient in row.patients.all %}
+                    <div>
+                        <span class="glyphicons glyphicons-md
+                        glyphicons-{{ patient.css_species_class }}" aria-hidden="true">
+                        </span>
+                        <strong>{{ patient.name }}</strong>
+                    </div>
+                {% endfor patient %}
+            </td>
+            <td data-title="{{ column_list.1 }}">
+                {{ row.client }}
+            </td>
+            <td data-title="{{ column_list.2 }}">
+                {% for observation in row.observation_set.all %}
+                    {{ observation }}
+                {% endfor observation %}
+            </td>
+            <td data-title="{{ column_list.3 }}">
+                {{ row.start }}
+            </td>
+            <td data-title="{{ column_list.4 }}">
+                {{ row.attending_staff }}
+            </td>
+            <td>
+                (empty)
+            </td>
+        </tr>
+    {% endfor row %}
+
+    <!-- ========================================= ---->
+    <!-- ======== end table rows for list ======== ---->
+    <!-- ========================================= ---->
+
+{% endblock list_table %}

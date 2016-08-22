@@ -85,6 +85,7 @@ TEMPLATES = [
         'DIRS': ['/Users/davidmurphy/python3devel/axisvet/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
+            'string_if_invalid': 'INVALID EXPRESSION: %s',
             'context_processors': [
                 'axisvet.processors.nav_bar_alerts',
                 'django.template.context_processors.debug',

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'list.html' %}
 {% load i18n %}
 
 {% block title %}
@@ -6,79 +6,64 @@
     <!-- header text with icon -->
     <span>
         <span class="glyphicons glyphicons-calendar" aria-hidden="true"></span>
-        Today's Appointments
+        Appointment List
     </span>
     <!-- right-aligned header panel for button, form... -->
     <a href="{% url 'appointments:create' %}">
         <button class='btn btn-lg btn-success pull-right'>
             <span class="glyphicons glyphicons-lg glyphicons-plus" aria-hidden="true"></span>
-            New Appointment
+            New Consultation
         </button>
     </a>
+
 {% endblock title %}
 
-{% block content %}
+{% block list_table %}
 
-    <div class="row">
-        <form action="#" method="post">
-            {% csrf_token %}
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>{% trans 'Animal' %}</th>
-                    <th>{% trans 'Owner' %}</th>
-                    <th>{% trans 'Reason' %}</th>
-                    <th>{% trans 'Time' %}</th>
-                    <th>{% trans 'Vet' %}</th>
-                    <th>{% trans 'Status' %}</th>
-                </tr>
-                </thead>
-                <tbody>
+    <!-- ========================================= ---->
+    <!-- ======= start table rows for list ======= ---->
+    <!-- ========================================= ---->
 
-                {% for appointment in appointments %}
-                    <tr>
-                        <td>
-                            {% for patient in appointment.patients.all %}
-                                <div>
-                                    <span class="glyphicons glyphicons-{{ patient.css_species_class }}"
-                                          aria-hidden="true" style="font-size:20px"></span>
-                                    <strong> {{ patient.name }}</strong>
-                                </div>
-                            {% endfor appointment %}
-                        </td>
-                        <td>
-                            {{ appointment.client }}
-                        </td>
-                        <td>
-                            {{ appointment.reason }}
-                        </td>
-                        <td>
-                            {{ appointment.start }}
-                        </td>
-                        <td>
-                            {{ appointment.attending_staff }}
-                        </td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="submit" name="{{ appointment.css_status_class }}"
-                                        class="btn btn btn-{{ appointment.css_status_class }} text-capitalize"
-                                        data-toggle="tooltip" data-container="body" data-placement="left"
-                                        title="Click to set to '{{ appointment.css_next_step_class|title }}'">
-                                    {{ appointment.status }}
-                                </button>
+    {% for row in appointments %}
+        <tr>
+            <td data-title="{{ column_list.0 }}">
+                {% for patient in row.patients.all %}
+                    <div>
+                        <span class="glyphicons glyphicons-md
+                        glyphicons-{{ patient.css_species_class }}" aria-hidden="true">
+                        </span>
+                        <strong>{{ patient.name }}</strong>
+                    </div>
+                {% endfor patient %}
+            </td>
+            <td data-title="{{ column_list.1 }}">
+                {{ row.client }}
+            </td>
+            <td data-title="{{ column_list.2 }}">
+                {{ row.reason }}
+            </td>
+            <td data-title="{{ column_list.3 }}">
+                {{ row.start }}
+            </td>
+            <td data-title="{{ column_list.4 }}">
+                {{ row.attending_staff }}
+            </td>
+            <td>
+                <div class="btn-group">
+                    <button type="submit" name="{{ row.css_status_class }}"
+                            class="btn btn btn-{{ row.css_status_class }} text-capitalize"
+                            data-toggle="tooltip" data-container="body" data-placement="left"
+                            title="Click to set to '{{ row.css_next_step_class|title }}'">
+                        {{ row.status }}
+                    </button>
+                    <!-- display dropdown if there is a call to action -->
+                </div>
+            </td>
+        </tr>
+    {% endfor row %}
 
+    <!-- ========================================= ---->
+    <!-- ======== end table rows for list ======== ---->
+    <!-- ========================================= ---->
 
-                                <!-- display dropdown if there is a call to action -->
-                            </div>
-                        </td>
-                    </tr>
-                {% endfor %}
-
-                </tbody>
-            </table>
-        </form>
-    </div>
-
-    {% include 'snippets/pagination.html' %}
-
-{% endblock %}
+{% endblock list_table %}

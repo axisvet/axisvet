@@ -2,6 +2,7 @@
 
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
+from django.utils.translation import ugettext as _
 from braces.views import LoginRequiredMixin
 from .models import Client
 from .models import Patient
@@ -19,14 +20,38 @@ class ClientListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         # form = form_class(self.request.GET)
-
         q = self.request.GET.get("q")
         if q:
-            qs = Client.objects.prefetch_related('patients', 'patients__species').all().distinct()
+            qs = Client.objects.prefetch_related(
+                'patients',
+                'patients__species'
+            ).all().distinct()
+
         else:
-            qs = Client.objects.prefetch_related('patients', 'patients__species').all().distinct()
+            qs = Client.objects.prefetch_related(
+                'patients',
+                'patients__species'
+            ).all().distinct()
 
         return qs
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ClientListView, self).get_context_data(**kwargs)
+        # Define required column headers in listview template
+        context['column_list'] = [
+            _('Name'),
+            _('Patient'),
+            _('Street Address'),
+            _('Mobile'),
+            _('XXX'),
+            _('XXX')
+        ]
+
+        context['page_title'] = _('Clients')
+        context['icons'] = ['group']
+
+        return context
 
 
 class ClientDetailView(LoginRequiredMixin, DetailView):
@@ -54,12 +79,37 @@ class PatientListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
 
         q = self.request.GET.get("q")
+
         if q:
-            qs = Patient.objects.filter(name__icontains=q).select_related('species', 'client').distinct()
+            qs = Patient.objects.filter(name__icontains=q).select_related(
+                'species',
+                'client'
+            ).distinct()
+
         else:
-            qs = Patient.objects.select_related('species', 'client').distinct()
+            qs = Patient.objects.select_related(
+                'species',
+                'client'
+            ).distinct()
 
         return list(qs)
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(PatientListView, self).get_context_data(**kwargs)
+        # Define required column headers in listview template
+        context['column_list'] = [
+            _('Species'),
+            _('Name'),
+            _('Weight (kg)'),
+            _('Breed'),
+            _('Owner'),
+            _('XXX'),
+        ]
+        context['page_title'] = _('Patients')
+        context['icons'] = ['dog', 'cat', 'rabbit']
+
+        return context
 
 
 class PatientDetailView(LoginRequiredMixin, DetailView):
