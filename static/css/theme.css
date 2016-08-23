@@ -105,5 +105,9 @@ body {
 }
 
 .main-content {
-   background-color: rgba(245, 245, 245, 0.8);
+   /*background-color: rgba(245, 245, 245, 1);*/
+}
+
+.add-new{
+	 color:  #5cb85c;
 }

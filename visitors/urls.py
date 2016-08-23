@@ -52,7 +52,7 @@ urlpatterns = [
     url(
         regex=r'^patients/new/$',
         view=views.PatientCreateView.as_view(),
-        name='patients_create'
+        name='patient_create'
     ),
 
 ]

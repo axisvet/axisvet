@@ -3,6 +3,7 @@
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
 from braces.views import LoginRequiredMixin
 from .models import Client
 from .models import Patient
@@ -50,7 +51,8 @@ class ClientListView(LoginRequiredMixin, ListView):
 
         context['page_title'] = _('Clients')
         context['icons'] = ['group']
-
+        context['add_url'] = reverse('visitors:client_create')
+        context['include_search'] = True
         return context
 
 
@@ -60,6 +62,17 @@ class ClientDetailView(LoginRequiredMixin, DetailView):
 
 class ClientCreateView(LoginRequiredMixin, CreateView):
     model = Client
+    fields = ('first_name',)
+    template_name = 'visitors/client_create.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ClientCreateView, self).get_context_data(**kwargs)
+        context['page_title'] = _('New client')
+        context['icons'] = ['group']
+        context['add_url'] = ''
+        context['include_search'] = False
+        return context
 
 
 class ClientUpdateView(LoginRequiredMixin, UpdateView):
@@ -108,7 +121,8 @@ class PatientListView(LoginRequiredMixin, ListView):
         ]
         context['page_title'] = _('Patients')
         context['icons'] = ['dog', 'cat', 'rabbit']
-
+        context['add_url'] = reverse('visitors:patient_create')
+        context['include_search'] = True
         return context
 
 
@@ -118,6 +132,15 @@ class PatientDetailView(LoginRequiredMixin, DetailView):
 
 class PatientCreateView(LoginRequiredMixin, CreateView):
     model = Patient
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(PatientCreateView, self).get_context_data(**kwargs)
+        context['page_title'] = _('New patient')
+        context['icons'] = ['dog', 'cat', 'rabbit']
+        context['add_url'] = ''
+        context['include_search'] = False
+        return context
 
 
 class PatientUpdateView(LoginRequiredMixin, UpdateView):

@@ -1,24 +1,6 @@
 {% extends 'index.html' %}
 {% load i18n %}
 
-{% block title %}
-
-    <!-- header text with icon -->
-    <span>
-        <span class="glyphicons glyphicons-calendar" aria-hidden="true"></span>
-        New Consultation
-    </span>
-    <!-- right-aligned header panel for button, form... -->
-    <!--
-    <a href="{% url 'appointments:create' %}">
-        <button class='btn btn-lg btn-success pull-right'>
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            New Appointment
-        </button>
-    </a>
-    -->
-{% endblock title %}
-
 {% block content %}
     <form action="{% url 'consultations:create' %}" method="post">
         {% csrf_token %}
@@ -36,7 +18,7 @@
                 {{ formset.management_form }}
             </div>
         {% endfor %}
-        <input type="submit" value="Add client" class="submit"/>
+        <input type="submit" value="Add consultation" class="submit"/>
     </form>
 
 {% endblock %}

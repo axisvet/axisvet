@@ -1,5 +1,6 @@
 # appointments/view.py
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
+from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext as _
 from django.contrib.messages.views import SuccessMessageMixin
 from braces.views import LoginRequiredMixin
@@ -19,7 +20,6 @@ class AppointmentListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
             'patients',
             'patients__species',
             'attending_staff__appointment_set')
-
         return list(qs)
 
     def get_context_data(self, **kwargs):
@@ -38,6 +38,8 @@ class AppointmentListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
         ]
         context['page_title'] = _('Appointments')
         context['icons'] = ['calendar']
+        context['add_url'] = reverse('appointments:create')
+        context['include_search'] = True
         return context
 
 
@@ -53,7 +55,6 @@ class AppointmentCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
     model = Appointment
     form_class = AppointmentForm
     template_name = 'appointments/appointment_create.html'
-    # success_url = '/appointments/'
     success_message = _("Appointment '%(reason)s' on %(start)s was created successfully")
 
     def form_valid(self, form):
@@ -61,3 +62,13 @@ class AppointmentCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView)
         form.instance.created_by = self.request.user
         form.instance.modified_by = self.request.user
         return super(AppointmentCreateView, self).form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(AppointmentCreateView, self).get_context_data(**kwargs)
+
+        context['page_title'] = _('New Appointment')
+        context['icons'] = ['calendar']
+        context['add_url'] = ''
+        context['include_search'] = False
+        return context

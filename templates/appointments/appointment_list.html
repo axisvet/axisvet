@@ -1,23 +1,6 @@
 {% extends 'list.html' %}
 {% load i18n %}
 
-{% block title %}
-
-    <!-- header text with icon -->
-    <span>
-        <span class="glyphicons glyphicons-calendar" aria-hidden="true"></span>
-        Appointment List
-    </span>
-    <!-- right-aligned header panel for button, form... -->
-    <a href="{% url 'appointments:create' %}">
-        <button class='btn btn-lg btn-success pull-right'>
-            <span class="glyphicons glyphicons-lg glyphicons-plus" aria-hidden="true"></span>
-            New Consultation
-        </button>
-    </a>
-
-{% endblock title %}
-
 {% block list_table %}
 
     <!-- ========================================= ---->

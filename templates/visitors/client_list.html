@@ -1,27 +1,6 @@
 {% extends 'list.html' %}
 {% load i18n %}
 
-{% block title %}
-
-    <!-- header text with icon -->
-    <span>
-        <span class="glyphicons glyphicons-group" aria-hidden="true"></span>
-        Clients
-    </span>
-    <!-- right-aligned header panel for button, form... -->
-    <form action="{% url 'visitors:client_list' %}" method="GET" class="form-inline pull-right">
-        <div class="form-group form-group-lg has-feedback">
-            <label class="sr-only" for="search">Search</label>
-            <input type="text" class="form-control" name="q" id="search" placeholder="Search">
-            <span class="glyphicons glyphicons-group form-control-feedback" style="font-size:24px"></span>
-        </div>
-        <button type="submit" class="btn btn-lg btn-success">
-            <span class="glyphicons glyphicons-search" aria-hidden="true"></span>Search
-        </button>
-    </form>
-
-{% endblock title %}
-
 {% block list_table %}
 
     <!-- ========================================= ---->

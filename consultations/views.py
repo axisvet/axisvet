@@ -1,6 +1,7 @@
 # appointments/view.py
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
 import datetime
+from django.core.urlresolvers import reverse
 from braces.views import LoginRequiredMixin
 from extra_views import CreateWithInlinesView, NamedFormsetsMixin
 from django.utils.translation import ugettext as _
@@ -41,13 +42,26 @@ class ConsultationListView(LoginRequiredMixin, ListView):
             _('Status')
         ]
         context['page_title'] = _('Consultations')
+        context['add_url'] = reverse('consultations:create')
         context['icons'] = ['stethoscope']
-
+        context['include_search'] = True
         return context
 
 
 class ConsultationDetailView(LoginRequiredMixin, DetailView):
     model = Consultation
+
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ConsultationDetailView, self).get_context_data(**kwargs)
+        # Define required column headers in listview template
+
+        context['page_title'] = _('Consultation details')
+        context['add_url'] = ''
+        context['icons'] = ['stethoscope']
+        context['include_search'] = False
+        return context
 
 
 class ConsultationUpdateStatusView(LoginRequiredMixin, UpdateView):
@@ -117,3 +131,14 @@ class ConsultationCreateView(LoginRequiredMixin, NamedFormsetsMixin, InlineSucce
 
         return super(ConsultationCreateView, self).forms_valid(form_class, inlines)
         # return HttpResponse(new_consultation.observation_set)
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ConsultationCreateView, self).get_context_data(**kwargs)
+        # Define required column headers in listview template
+
+        context['page_title'] = _('New consultation')
+        context['add_url'] = ''
+        context['icons'] = ['stethoscope']
+        context['include_search'] = False
+        return context
