@@ -1,4 +1,29 @@
 {% extends 'index.html' %}
+{% load model_field %}
 {% load i18n %}
 
-{% block title %}Patient details page{% endblock title %}
+{% block content %}
+
+
+    {% for header in object.get_listview_headers %}
+    {{ header }}<br/>
+    {% endfor %}
+
+    <hr/>
+
+
+    <h3>{% verbose_field_name from object.name %} : {{ object.name }}</h3>
+    <p>{% verbose_field_name from object.gender %} : {{ object.gender }}
+    <p>{% verbose_field_name from object.client %} : {{ object.client }}
+    <p>{% verbose_field_name from object.name %} : {{ object.name }}
+    <p>{% verbose_field_name from object.species %} : {{ object.species }}
+    <p>{% verbose_field_name from object.breed %} : {{ object.breed }}
+    <p>{% verbose_field_name from object.weight %} : {{ object.weight }}
+    <p>{% verbose_field_name from object.date_of_birth %} : {{ object.date_of_birth }}
+    <p>{% verbose_field_name from object.colour %} : {{ object.colour }}
+    <p>{% verbose_field_name from object.remarks %} : {{ object.remarks }}
+    <p>{% verbose_field_name from object.microchip %} : {{ object.microchip }}
+    <p>{% verbose_field_name from object.archived %} : {{ object.archived }}
+    <p>{% verbose_field_name from object.deceased %} : {{ object.deceased }}
+
+{% endblock content %}

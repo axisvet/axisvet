@@ -10,99 +10,39 @@
     {% load staticfiles %}
     <link rel="icon" href="{% static 'css/favicon.css' %}">
 
+    {% block title %}
     <title>Axis.vet - practice management made simple</title>
+    {% endblock title %}
 
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Bootstrap theme -->
-    <link href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css' %}" rel="stylesheet">
-    <!-- Icons CSS -->
-    <link href="{% static 'bootstrap/dist/css/glyphicons.css' %}" rel="stylesheet">
-    <link href="{% static 'bootstrap/dist/css/glyphicons-bootstrap.css' %}" rel="stylesheet">
-    <!-- Mini calendar CSS -->
-    <link href="{% static 'bootstrap/bootstrap2-datetimepicker/css/bootstrap-datetimepicker.min.css' %}"
-          rel="stylesheet">
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="{% static 'bootstrap/dist/css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/theme.css' %}" rel="stylesheet">
-    <!-- fullscreen background image -->
-    <link href="{% static 'css/full.css' %}" rel="stylesheet">
+    <!-- ============ css and js files  ==============-->
+    {% block css_js %}
+        {% include 'css_js.html' %}
+    {% endblock css_js %}
+    <!-- =========== end css and js files  ============-->
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <script src="{% static 'jquery/jquery-2.2.4.min.js' %}"></script>
-    <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'bootstrap/dist/js/transition.js' %}"></script>
-    <script src="{% static 'bootstrap/dist/js/collapse.js' %}"></script>
-    <script src="{% static 'bootstrap/bootstrap2-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
-    <script src="{% static 'js/chainedm2m.js' %}"></script>
-    <script src="{% static 'js/chainedfk.js' %}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{% static 'bootstrap/dist/js/ie10-viewport-bug-workaround.js' %}"></script>
 </head>
 
 <body>
-<!-- Fixed navbar -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Family Vet</a>
-        </div>
 
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav nav">
-                <li {% if 'appointments' in request.path %}class="active"{% endif %}>
-                    <a href="{% url 'appointments:list' %}">
-                        <span class="glyphicons glyphicons-xl glyphicons-home" aria-hidden="true"></span>
-                        Reception
-                        <!-- display label indicating number of clients waiting to pay -->
-                        {% if TO_PAY_COUNT %}
-                            <span class="label label-danger">{{ TO_PAY_COUNT }}</span>
-                        {% endif %}
-                    </a>
 
-                </li>
-                <li {% if 'clients' in request.path %}class="active"{% endif %}>
-                    <a href="{% url 'visitors:client_list' %}">
-                        <span class="glyphicons glyphicons-xl glyphicons-group" aria-hidden="true"></span>
-                        Clients</a>
-                </li>
-                <li {% if 'patients' in request.path %}class="active"{% endif %}>
-                    <a href="{% url 'visitors:patient_list' %}">
-                        <span class="glyphicons glyphicons-xl glyphicons-cat" aria-hidden="true"></span>
-                        Patients</a>
-                </li>
-                <li {% if 'consultations' in request.path %}class="active"{% endif %}>
-                    <a href="{% url 'consultations:list' %}">
-                        <span class="glyphicons glyphicons-xl glyphicons-stethoscope" aria-hidden="true"></span>
-                        Consultations</a>
-                </li>
 
-            </ul>
-            <p class="navbar-text navbar-right">Signed in as {{ request.user }}</p>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+
+<!-- ================ navigation  =================-->
+{% block navigation %}
+    {% include 'navigation.html' %}
+{% endblock navigation %}
+<!-- ================ navigation  =================-->
+
+
+
+
 
 <!-- ========================================-->
 <!-- ============== main div ================-->
 <!-- ========================================-->
 
 <div class="container main-content img-rounded" role="main">
+
 
 
     <!-- ========= start alerts panel ===========-->
@@ -118,35 +58,6 @@
     {% endif %}
     <!-- =========== end alerts panel ===========-->
 
-    <style>
-        .success {
-            color: #5cb85c;
-        }
-
-        .green {
-            background: green
-        }
-
-        .red {
-            background: red
-        }
-
-        .pink {
-            background: pink
-        }
-
-        .purple {
-            background: purple
-        }
-
-        .orange {
-            background: orange
-        }
-
-        .lightblue {
-            background: lightblue
-        }
-    </style>
 
 
     <!-- ============ start headline =============-->
@@ -155,21 +66,13 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
 
             <h2>
-                {% if add_url %}
-                    <a href="{{ add_url }}"><span class="glyphicons glyphicons-plus-sign add-new"></span></a>
-                {% else %}
-                    {% for icon in icons %}
-                        <span class="glyphicons glyphicons-{{ icon }}"></span>
-                    {% endfor %}
-                {% endif %}
-                {{ page_title }}
+            {% block headline_icon %}{% endblock headline_icon %}
+                {{ decorator_text }}
             </h2>
         </div>
 
         <div class="col-md-6 col-sm-6 col-xs-12 search-box">
-            {% if include_search %}
-                {% include 'snippets/list_search.html' %}
-            {% endif %}
+            {% block headline_widget %}{% endblock headline_widget %}
         </div>
 
     </div>
@@ -177,11 +80,19 @@
     <!-- ============ end headline ==============-->
 
 
+
+
+
+
     <!-- ============ main content  ==============-->
     {% block content %}
         <p>block content in index.html</p>
     {% endblock content %}
     <!-- ========== end  main content  ===========-->
+
+
+
+
 
 
     <!-- ========================================-->

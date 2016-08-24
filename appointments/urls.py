@@ -30,9 +30,9 @@ urlpatterns = [
         name='detail'
     ),
     url(
-        regex=r'^updatestatus/(?P<pk>\d+)/$',
-        view=views.AppointmentUpdateStatusView.as_view(),
-        name='update_status'
+        regex=r'^(?P<pk>\d+)/update/$',
+        view=views.AppointmentUpdateView.as_view(),
+        name='update'
     ),
     url(
         regex=r'^new/$',

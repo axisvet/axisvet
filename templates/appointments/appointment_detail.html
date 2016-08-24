@@ -1,4 +1,32 @@
 {% extends 'index.html' %}
+{% load model_field %}
 {% load i18n %}
 
-{% block title %}appointment details page{% endblock title %}
+{% block content %}
+
+    {% for header in object.get_listview_headers %}
+        {{ header }}<br xmlns="http://www.w3.org/1999/html"/>
+    {% endfor %}
+
+    <hr/>
+
+    <p> {{ object.VERBOSE_STATUS }} : {{ object.status }}</p>
+    <p> {{ object.VERBOSE_START }} : {{ object.start }}</p>
+    <p> {{ object.VERBOSE_REASON }} : {{ object.reason }}</p>
+    <p> {{ object.VERBOSE_CLIENT }} : {{ object.client }}</p>
+
+    <p> {{ object.VERBOSE_PATIENTS }} :</p>
+    {% for patient in object.patients.all %}
+       - {{ patient.name }} / {{ patient.gender }} / {{ patient.breed }} <br/>
+    {% endfor %}
+
+    <p> {{ object.VERBOSE_DURATION }} : {{ object.duration }}</p>
+    <p> {{ object.VERBOSE_ATTENDING_STAFF }} : {{ object.attending_staff }}</p>
+    <p> {{ object.VERBOSE_CONSULTATION }} : {{ object.consultation }}</p>
+    <p> {{ object.VERBOSE_CREATED_BY }} : {{ object.created_by }}</p>
+    <p> {{ object.VERBOSE_MODIFIED_BY }} : {{ object.modified_by }}</p>
+
+
+{% endblock content %}
+
+

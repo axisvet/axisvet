@@ -1,10 +1,11 @@
 # visitors/view.py
-
-from django.db.models import Q
+from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, UpdateView, CreateView
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from braces.views import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from extra_views import SearchableListMixin
 from .models import Client
 from .models import Patient
 
@@ -13,135 +14,166 @@ from .models import Patient
 # ======================= #
 
 
-class ClientListView(LoginRequiredMixin, ListView):
+class ClientListView(LoginRequiredMixin, SearchableListMixin, ListView):
     template_name = 'visitors/client_list.html'
     # friendly template context
     context_object_name = 'clients'
     paginate_by = 50
-
-    def get_queryset(self):
-        # form = form_class(self.request.GET)
-        q = self.request.GET.get("q")
-        if q:
-            qs = Client.objects.prefetch_related(
-                'patients',
-                'patients__species'
-            ).all().distinct()
-
-        else:
-            qs = Client.objects.prefetch_related(
-                'patients',
-                'patients__species'
-            ).all().distinct()
-
-        return qs
+    queryset = Client.objects.prefetch_related('patients', 'patients__species').all().distinct()
+    search_fields = ['first_name', 'last_name', 'email',
+                     'street_address', 'mobile', 'patients__name', 'patients__species__name']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ClientListView, self).get_context_data(**kwargs)
         # Define required column headers in listview template
-        context['column_list'] = [
-            _('Name'),
-            _('Patient'),
-            _('Street Address'),
-            _('Mobile'),
-            _('XXX'),
-            _('XXX')
-        ]
-
-        context['page_title'] = _('Clients')
-        context['icons'] = ['group']
-        context['add_url'] = reverse('visitors:client_create')
-        context['include_search'] = True
+        context['decorator_text'] = Client._meta.verbose_name_plural
+        context['icons'] = Client.PAGE_ICONS
+        context['url'] = reverse('visitors:client_create')
         return context
 
 
 class ClientDetailView(LoginRequiredMixin, DetailView):
     model = Client
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ClientDetailView, self).get_context_data(**kwargs)
+        context['decorator_text'] = Client._meta.verbose_name + ' ' + _('details')
+        context['icons'] = Client.PAGE_ICONS
+        return context
 
-class ClientCreateView(LoginRequiredMixin, CreateView):
+
+class ClientCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Client
-    fields = ('first_name',)
-    template_name = 'visitors/client_create.html'
+    fields = (
+        'first_name',
+        'last_name',
+        'email',
+        'street_address',
+        'street_address_2',
+        'city',
+        'zip',
+        'county',
+        'mobile',
+        'organisation_name',
+    )
+    template_name = 'visitors/client_patient_create_update.html'
+    success_message = _("Client %(first_name)s %(last_name)s was added successfully")
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(ClientCreateView, self).get_context_data(**kwargs)
-        context['page_title'] = _('New client')
-        context['icons'] = ['group']
-        context['add_url'] = ''
-        context['include_search'] = False
+        context['decorator_text'] = _('Add') + ' ' + Client._meta.verbose_name
+        context['icons'] = Client.PAGE_ICONS
         return context
 
 
-class ClientUpdateView(LoginRequiredMixin, UpdateView):
+class ClientUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Client
 
+    fields = (
+        'first_name',
+        'last_name',
+        'email',
+        'street_address',
+        'street_address_2',
+        'city',
+        'zip',
+        'county',
+        'mobile',
+        'organisation_name',
+    )
+
+    template_name = 'visitors/client_patient_create_update.html'
+    success_message = _("Client was updated successfully")
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ClientUpdateView, self).get_context_data(**kwargs)
+        context['decorator_text'] = _('Update') + ' ' + Client._meta.verbose_name
+        context['icons'] = Client.PAGE_ICONS
+        return context
 
 # ======================= #
 # ====== patients ======= #
 # ======================= #
 
-class PatientListView(LoginRequiredMixin, ListView):
+
+class PatientListView(LoginRequiredMixin, SearchableListMixin, ListView):
     template_name = 'visitors/patient_list.html'
     # friendly template context
     context_object_name = 'patients'
     paginate_by = 50
-
-    def get_queryset(self):
-
-        q = self.request.GET.get("q")
-
-        if q:
-            qs = Patient.objects.filter(name__icontains=q).select_related(
-                'species',
-                'client'
-            ).distinct()
-
-        else:
-            qs = Patient.objects.select_related(
-                'species',
-                'client'
-            ).distinct()
-
-        return list(qs)
+    queryset = Patient.objects.select_related('client', 'species').distinct().order_by('name')
+    search_fields = ['species__name', 'breed', 'name', 'client__first_name', 'client__last_name']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(PatientListView, self).get_context_data(**kwargs)
         # Define required column headers in listview template
-        context['column_list'] = [
-            _('Species'),
-            _('Name'),
-            _('Weight (kg)'),
-            _('Breed'),
-            _('Owner'),
-            _('XXX'),
-        ]
-        context['page_title'] = _('Patients')
-        context['icons'] = ['dog', 'cat', 'rabbit']
-        context['add_url'] = reverse('visitors:patient_create')
-        context['include_search'] = True
+        context['decorator_text'] = Patient._meta.verbose_name_plural
+        context['icons'] = Patient.PAGE_ICONS
+        context['url'] = reverse('visitors:patient_create')
         return context
 
 
 class PatientDetailView(LoginRequiredMixin, DetailView):
     model = Patient
 
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(PatientDetailView, self).get_context_data(**kwargs)
+        context['decorator_text'] = Patient._meta.verbose_name + ' ' + _('details')
+        context['icons'] = Patient.PAGE_ICONS
+        return context
 
-class PatientCreateView(LoginRequiredMixin, CreateView):
+
+class PatientCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Patient
+    fields = (
+        'species',
+        'breed',
+        'gender',
+        'name',
+        'client',
+        'weight',
+        'date_of_birth',
+        'colour',
+        'remarks',
+        'microchip',
+    )
+    template_name = 'visitors/client_patient_create_update.html'
+    success_message = _("Patient %(name)s was added successfully")
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
         context = super(PatientCreateView, self).get_context_data(**kwargs)
-        context['page_title'] = _('New patient')
-        context['icons'] = ['dog', 'cat', 'rabbit']
-        context['add_url'] = ''
-        context['include_search'] = False
+        context['decorator_text'] = _('Add') + ' ' + Patient._meta.verbose_name
+        context['icons'] = Patient.PAGE_ICONS
         return context
 
 
-class PatientUpdateView(LoginRequiredMixin, UpdateView):
+class PatientUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Patient
+    fields = (
+        'species',
+        'breed',
+        'gender',
+        'name',
+        'client',
+        'weight',
+        'date_of_birth',
+        'colour',
+        'remarks',
+        'microchip',
+    )
+    template_name = 'visitors/client_patient_create_update.html'
+    success_message = _("Patient %(name)s was updated successfully")
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(PatientUpdateView, self).get_context_data(**kwargs)
+        context['decorator_text'] = _('Update') + ' ' + Patient._meta.verbose_name
+        context['icons'] = Patient.PAGE_ICONS
+        return context

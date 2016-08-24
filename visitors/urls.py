@@ -32,6 +32,11 @@ urlpatterns = [
         name='client_detail'
     ),
     url(
+        regex=r'^clients/(?P<pk>\d+)/update/$',
+        view=views.ClientUpdateView.as_view(),
+        name='client_update'
+    ),
+    url(
         regex=r'^clients/new/$',
         view=views.ClientCreateView.as_view(),
         name='client_create'
@@ -48,6 +53,11 @@ urlpatterns = [
         regex=r'^patients/(?P<pk>\d+)/$',
         view=views.PatientDetailView.as_view(),
         name='patient_detail'
+    ),
+    url(
+        regex=r'^patients/(?P<pk>\d+)/update/$',
+        view=views.PatientUpdateView.as_view(),
+        name='patient_update'
     ),
     url(
         regex=r'^patients/new/$',

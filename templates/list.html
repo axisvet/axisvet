@@ -2,37 +2,58 @@
 {% extends 'index.html' %}
 {% load i18n %}
 
+{% block headline_icon %}
+    <a href="{{ url }}" data-toggle="tooltip" data-placement="top"
+       title="{% trans 'Add' %} {{ decorator_text }}">
+        <span class="glyphicons glyphicons-plus-sign add-new"></span></a>
+{% endblock headline_icon %}
+
+{% block headline_widget %}
+    {% include 'snippets/list_search.html' %}
+{% endblock headline_widget %}
+
 {% block content %}
 
-    <form action="#" method="post">
-        {% csrf_token %}
+    {% if object_list %}
 
-        <div class="row">
-            <div id="no-more-tables">
-                <table class="table table-striped cf col-md-12">
-                    <thead class="cf">
-                    <tr>
-                        <!-- display table headers from context variable in view -->
-                        {% for header in column_list %}
-                            <th>{{ header }}</th>
-                        {% endfor header %}
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% block list_table %}
+        <form action="#" method="post">
+            {% csrf_token %}
 
-                        <!-- ========================================= ---->
-                        <!-- ==========  table rows for list ========= ---->
-                        <!-- ========================================= ---->
+            <div class="row">
+                <div id="no-more-tables">
+                    <table class="table table-striped cf col-md-12">
+                        <thead class="cf">
+                        <tr>
+                            <!-- display table headers from context variable in view -->
+                            {% for header in object_list.0.get_listview_headers %}
+                                <th>{{ header }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% block list_table %}
 
-                    {% endblock list_table %}
-                    </tbody>
-                </table>
+                            <!-- ========================================= ---->
+                            <!-- ==========  table rows for list ========= ---->
+                            <!-- ========================================= ---->
+
+                        {% endblock list_table %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
 
-    </form>
+        </form>
 
-    {% include 'snippets/pagination.html' %}
+        {% include 'snippets/pagination.html' %}
+
+    {% else %}
+        <h4>
+            {% blocktrans %}
+                No {{ decorator_text }} found.
+            {% endblocktrans %}
+
+        </h4>
+    {% endif %}
 
 {% endblock %}

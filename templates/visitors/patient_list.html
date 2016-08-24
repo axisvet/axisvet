@@ -7,28 +7,25 @@
     <!-- ======= start table rows for list ======= ---->
     <!-- ========================================= ---->
 
-    {% for row in patients %}
+    {% for row in object_list %}
         <tr>
-            <td data-title="{{ column_list.0 }}">
+            <td data-title="{{ row.get_listview_headers.0 }}">
                 {% if row.css_species_class %}
                     <span class="glyphicons glyphicons-lg glyphicons-{{ row.css_species_class }}" aria-hidden="true"></span>
                 {% endif %}
             </td>
-            <td data-title="{{ column_list.1 }}">
+            <td data-title="{{ row.get_listview_headers.1 }}">
                 <span class="glyphicons glyphicons-{{ row.css_gender_class }}" aria-hidden="true"></span>
                 <strong>{{ row.name }}</strong>
             </td>
-            <td data-title="{{ column_list.2 }}">
+            <td data-title="{{ row.get_listview_headers.2 }}">
                 {{ row.weight }}
             </td>
-            <td data-title="{{ column_list.3 }}">
+            <td data-title="{{ row.get_listview_headers.3 }}">
                 {{ row.breed }}
             </td>
-            <td data-title="{{ column_list.4 }}">
+            <td data-title="{{ row.get_listview_headers.4 }}">
                 {{ row.client }}
-            </td>
-            <td>
-                (empty)
             </td>
         </tr>
     {% endfor row %}

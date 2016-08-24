@@ -1,38 +1,39 @@
 body {
-  padding-top: 50px; /* originally 70 */
-  padding-bottom: 30px;
+    padding-top: 50px; /* originally 70 */
+    padding-bottom: 30px;
 }
 
 .theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+    position: static;
+    display: block;
+    margin-bottom: 20px;
 }
 
 .theme-showcase > p > .btn {
-  margin: 5px 0;
+    margin: 5px 0;
 }
 
 .theme-showcase .navbar .container {
-  width: auto;
+    width: auto;
 }
+
 /* make table text bigger than default */
 .table-striped {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 /* make table text bigger than default */
 .glyphicons-xl {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 /* make table text bigger than default */
 .glyphicons-lg {
-  font-size: 22px;
+    font-size: 22px;
 }
 
 .glyphicons-md {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .tooltip-inner {
@@ -45,69 +46,115 @@ body {
 @media only screen and (max-width: 800px) {
 
     /* Force table to not be like tables anymore */
-	#no-more-tables table,
-	#no-more-tables thead,
-	#no-more-tables tbody,
-	#no-more-tables th,
-	#no-more-tables td,
-	#no-more-tables tr {
-		display: block;
-	}
+    #no-more-tables table,
+    #no-more-tables thead,
+    #no-more-tables tbody,
+    #no-more-tables th,
+    #no-more-tables td,
+    #no-more-tables tr {
+        display: block;
+    }
 
-	/* Hide table headers (but not display: none;, for accessibility) */
-	#no-more-tables thead tr {
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-	}
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #no-more-tables thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
 
-	#no-more-tables tr { border: 1px solid #ccc; }
+    #no-more-tables tr {
+        border: 1px solid #ccc;
+    }
 
-	#no-more-tables td {
-		/* Behave  like a "row" */
-		border: none;
-		border-bottom: 1px solid #eee;
-		position: relative;
-		padding-left: 50%;
-		white-space: normal;
-		text-align:left;
-	}
+    #no-more-tables td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
 
-	#no-more-tables td:before {
-		/* Now like a table header */
-		position: absolute;
-		/* Top/left values mimic padding */
-		top: 6px;
-		left: 6px;
-		width: 45%;
-		padding-right: 10px;
-		white-space: nowrap;
-		text-align:left;
-		font-weight: bold;
-	}
+    #no-more-tables td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
 
-	/*
-	Label the data
-	*/
-	#no-more-tables td:before { content: attr(data-title); }
+    /*
+    Label the data
+    */
+    #no-more-tables td:before {
+        content: attr(data-title);
+    }
 }
 
 .row {
-	padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .search-button,
 .search-panel,
-.search-form
- {
-  padding: 0;
+.search-form {
+    padding: 0;
 
 }
 
 .main-content {
-   /*background-color: rgba(245, 245, 245, 1);*/
+    /*background-color: rgba(245, 245, 245, 1);*/
 }
 
-.add-new{
-	 color:  #5cb85c;
+.add-new {
+    color: #5cb85c;
+}
+
+.tooltip.top .tooltip-inner {
+    background-color: #5cb85c;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #5cb85c;
+}
+
+tr a {
+    color: black;
+}
+
+tr a:visited {
+    color: black;
+}
+
+tr a:hover {
+    color: #5cb85c;
+}
+
+/* debugging */
+.success {
+    color: #5cb85c;
+}
+.green {
+    background: green
+}
+.red {
+    background: red
+}
+.pink {
+    background: pink
+}
+.purple {
+    background: purple
+}
+.orange {
+    background: orange
+}
+.lightblue {
+    background: lightblue
 }

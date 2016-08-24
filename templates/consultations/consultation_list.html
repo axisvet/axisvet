@@ -7,9 +7,9 @@
     <!-- ======= start table rows for list ======= ---->
     <!-- ========================================= ---->
 
-    {% for row in consultations %}
+    {% for row in object_list %}
         <tr>
-            <td data-title="{{ column_list.0 }}">
+            <td data-title="{{ row.get_listview_headers.0 }}">
                 {% for patient in row.patients.all %}
                     <div>
                         <span class="glyphicons glyphicons-md
@@ -18,23 +18,31 @@
                         <strong>{{ patient.name }}</strong>
                     </div>
                 {% endfor patient %}
+            &nbsp;
             </td>
-            <td data-title="{{ column_list.1 }}">
+            <td data-title="{{ row.get_listview_headers.1 }}">
                 {{ row.client }}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.2 }}">
+            <td data-title="{{ row.get_listview_headers.2 }}">
                 {% for observation in row.observation_set.all %}
                     {{ observation }}
                 {% endfor observation %}
+            &nbsp;
             </td>
-            <td data-title="{{ column_list.3 }}">
+            <td data-title="{{ row.get_listview_headers.3 }}">
                 {{ row.start }}
+                <a href="{% url 'consultations:detail' pk=row.pk %}">
+                view
+                </a>
+                <a href="{% url 'consultations:update' pk=row.pk %}">
+                edit
+                </a>
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.4 }}">
+            <td data-title="{{ row.get_listview_headers.4 }}">
                 {{ row.attending_staff }}
-            </td>
-            <td>
-                (empty)
+                &nbsp;
             </td>
         </tr>
     {% endfor row %}

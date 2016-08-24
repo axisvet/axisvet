@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 10:38+0300\n"
+"POT-Creation-Date: 2016-08-24 18:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,44 +19,161 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
 
-#: appointments/models.py:17
+#: appointments/models.py:13
+msgid "Appointment"
+msgstr ""
+
+#: appointments/models.py:14
+msgid "Appointments"
+msgstr ""
+
+#: appointments/models.py:25
 msgid "Upcoming"
 msgstr ""
 
-#: appointments/models.py:18
+#: appointments/models.py:26
 msgid "Arrived"
 msgstr ""
 
-#: appointments/models.py:19
+#: appointments/models.py:27
 msgid "In Consult"
 msgstr ""
 
-#: appointments/models.py:20
+#: appointments/models.py:28
 msgid "Waiting to Pay"
 msgstr ""
 
-#: appointments/models.py:21
+#: appointments/models.py:29
 msgid "Payment Complete"
 msgstr ""
 
-#: basket/models.py:14
+#: appointments/models.py:32 consultations/models.py:12
+msgid "Status"
+msgstr ""
+
+#: appointments/models.py:33
+msgid "Date/Time"
+msgstr ""
+
+#: appointments/models.py:34
+msgid "Reason"
+msgstr ""
+
+#: appointments/models.py:37
+msgid "Duration"
+msgstr ""
+
+#: appointments/models.py:39 basket/models.py:15 consultations/models.py:20
 msgid "Consultation"
 msgstr ""
 
-#: basket/models.py:15
-msgid "Counter Sale"
+#: appointments/views.py:40 consultations/views.py:55 visitors/views.py:55
+#: visitors/views.py:157
+msgid "details"
+msgstr ""
+
+#: appointments/views.py:49
+#, python-format
+msgid "Appointment '%(reason)s' on %(start)s was created successfully"
+msgstr ""
+
+#: appointments/views.py:60 consultations/views.py:108 templates/list.html:7
+#: visitors/views.py:81 visitors/views.py:182
+msgid "Add"
+msgstr ""
+
+#: appointments/views.py:69
+msgid "Appointment was update successfully"
+msgstr ""
+
+#: appointments/views.py:80 consultations/views.py:164 visitors/views.py:108
+#: visitors/views.py:207
+msgid "Update"
 msgstr ""
 
 #: basket/models.py:16
-msgid "Estimate"
+msgid "Counter Sale"
 msgstr ""
 
 #: basket/models.py:17
-msgid "Repeat Prescription"
+msgid "Estimate"
 msgstr ""
 
 #: basket/models.py:18
+msgid "Repeat Prescription"
+msgstr ""
+
+#: basket/models.py:19
 msgid "Web Sale"
+msgstr ""
+
+#: consultations/models.py:13
+msgid "Statuses"
+msgstr ""
+
+#: consultations/models.py:21
+msgid "Consultations"
+msgstr ""
+
+#: consultations/models.py:27
+msgid "Consult Start"
+msgstr ""
+
+#: consultations/models.py:28
+msgid "Consult Finish"
+msgstr ""
+
+#: consultations/models.py:29
+msgid "Vet/Nurse"
+msgstr ""
+
+#: consultations/models.py:30
+msgid "Created by"
+msgstr ""
+
+#: consultations/models.py:31
+msgid "Last updated by"
+msgstr ""
+
+#: consultations/models.py:70
+msgid "Observation"
+msgstr ""
+
+#: consultations/models.py:71 consultations/models.py:73
+msgid "Observations"
+msgstr ""
+
+#: consultations/models.py:84 consultations/models.py:85
+#: consultations/models.py:87
+msgid "Clinical Notes"
+msgstr ""
+
+#: consultations/models.py:98
+msgid "Diangosis"
+msgstr ""
+
+#: consultations/models.py:99
+msgid "Diagnoses"
+msgstr ""
+
+#: consultations/models.py:101
+msgid "Diagnosis"
+msgstr ""
+
+#: consultations/models.py:112 consultations/models.py:115
+msgid "Treatment Plan"
+msgstr ""
+
+#: consultations/models.py:113
+msgid "Treatment Plans"
+msgstr ""
+
+#: consultations/views.py:65
+msgid "Consultation was created successfully"
+msgstr ""
+
+#: consultations/views.py:119
+msgid "Consultation was updated successfully"
 msgstr ""
 
 #: items/models.py:72
@@ -91,42 +208,165 @@ msgstr ""
 msgid "Euthanasia"
 msgstr ""
 
-#: templates/appointments/appointment_list.html:13
-msgid "Owner"
+#: templates/list.html:52
+#, python-format
+msgid ""
+"\n"
+"                No %(decorator_text)s found.\n"
+"            "
 msgstr ""
 
-#: templates/appointments/appointment_list.html:14
-msgid "Animal"
+#: visitors/models.py:12
+msgid "Species name"
 msgstr ""
 
-#: templates/appointments/appointment_list.html:15
-msgid "Time"
+#: visitors/models.py:13
+msgid "Unique ID code"
 msgstr ""
 
-#: templates/appointments/appointment_list.html:16
-msgid "Reason"
+#: visitors/models.py:21 visitors/models.py:39
+msgid "Client"
 msgstr ""
 
-#: templates/appointments/appointment_list.html:17
-msgid "Status"
+#: visitors/models.py:22
+msgid "Clients"
 msgstr ""
 
-#: visitors/models.py:39
-msgid "Female"
+#: visitors/models.py:26
+msgid "First Name"
+msgstr ""
+
+#: visitors/models.py:27
+msgid "Last Name"
+msgstr ""
+
+#: visitors/models.py:28
+msgid "Email"
+msgstr ""
+
+#: visitors/models.py:29
+msgid "Address Line 1"
+msgstr ""
+
+#: visitors/models.py:30
+msgid "Address Line 2"
+msgstr ""
+
+#: visitors/models.py:31
+msgid "Town / City"
+msgstr ""
+
+#: visitors/models.py:32
+msgid "Postcode"
+msgstr ""
+
+#: visitors/models.py:33
+msgid "County / State"
+msgstr ""
+
+#: visitors/models.py:34
+msgid "Mobile Phone"
+msgstr ""
+
+#: visitors/models.py:35
+msgid "Company"
+msgstr ""
+
+#: visitors/models.py:36 visitors/models.py:106
+msgid "Remarks"
 msgstr ""
 
 #: visitors/models.py:40
+msgid "Animals"
+msgstr ""
+
+#: visitors/models.py:80
+msgid "Patient"
+msgstr ""
+
+#: visitors/models.py:81
+msgid "Patients"
+msgstr ""
+
+#: visitors/models.py:91
+msgid "Female"
+msgstr ""
+
+#: visitors/models.py:92
 msgid "Female Sterilised"
 msgstr ""
 
-#: visitors/models.py:41
+#: visitors/models.py:93
 msgid "Male"
 msgstr ""
 
-#: visitors/models.py:42
+#: visitors/models.py:94
 msgid "Male Sterilised"
 msgstr ""
 
-#: visitors/models.py:43
+#: visitors/models.py:95
 msgid "Unknown"
+msgstr ""
+
+#: visitors/models.py:98
+msgid "Male / Female"
+msgstr ""
+
+#: visitors/models.py:99
+msgid "Owner"
+msgstr ""
+
+#: visitors/models.py:100
+msgid "Name"
+msgstr ""
+
+#: visitors/models.py:101
+msgid "Species"
+msgstr ""
+
+#: visitors/models.py:102
+msgid "Breed"
+msgstr ""
+
+#: visitors/models.py:103
+msgid "Weight (kg)"
+msgstr ""
+
+#: visitors/models.py:104
+msgid "Date of Birth"
+msgstr ""
+
+#: visitors/models.py:105
+msgid "Colour / Markings"
+msgstr ""
+
+#: visitors/models.py:107
+msgid "Microchip ID"
+msgstr ""
+
+#: visitors/models.py:108
+msgid "Archived"
+msgstr ""
+
+#: visitors/models.py:109
+msgid "Deceased"
+msgstr ""
+
+#: visitors/views.py:76
+#, python-format
+msgid "Client %(first_name)s %(last_name)s was added successfully"
+msgstr ""
+
+#: visitors/views.py:103
+msgid "Client was updated successfully"
+msgstr ""
+
+#: visitors/views.py:177
+#, python-format
+msgid "Patient %(name)s was added successfully"
+msgstr ""
+
+#: visitors/views.py:202
+#, python-format
+msgid "Patient %(name)s was updated successfully"
 msgstr ""

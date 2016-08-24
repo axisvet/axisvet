@@ -7,9 +7,9 @@
     <!-- ======= start table rows for list ======= ---->
     <!-- ========================================= ---->
 
-    {% for row in appointments %}
+    {% for row in object_list %}
         <tr>
-            <td data-title="{{ column_list.0 }}">
+            <td data-title="{{ row.get_listview_headers.0 }}">
                 {% for patient in row.patients.all %}
                     <div>
                         <span class="glyphicons glyphicons-md
@@ -18,18 +18,31 @@
                         <strong>{{ patient.name }}</strong>
                     </div>
                 {% endfor patient %}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.1 }}">
+            <td data-title="{{ row.get_listview_headers.1 }}">
+                <!-- dynamically populate cells based on context list -->
+                {#% load settings_value %#}{#{ row|settings_value:ttt }#}
                 {{ row.client }}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.2 }}">
-                {{ row.reason }}
-            </td>
-            <td data-title="{{ column_list.3 }}">
+            <td data-title="{{ row.get_listview_headers.2 }}">
                 {{ row.start }}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.4 }}">
+            <td data-title="{{ row.get_listview_headers.3 }}">
                 {{ row.attending_staff }}
+                &nbsp;
+            </td>
+            <td data-title="{{ row.get_listview_headers.4 }}">
+                {{ row.reason }}
+                <a href="{% url 'appointments:detail' pk=row.pk %}">
+                    view
+                </a>
+
+                <a href="{% url 'appointments:update' pk=row.pk %}">
+                    edit
+                </a>&nbsp;
             </td>
             <td>
                 <div class="btn-group">
@@ -41,6 +54,7 @@
                     </button>
                     <!-- display dropdown if there is a call to action -->
                 </div>
+                &nbsp;
             </td>
         </tr>
     {% endfor row %}

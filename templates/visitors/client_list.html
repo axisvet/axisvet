@@ -7,33 +7,37 @@
     <!-- ======= start table rows for list ======= ---->
     <!-- ========================================= ---->
 
-    {% for row in clients %}
+    {% for row in object_list %}
         <tr>
-            <td data-title="{{ column_list.0 }}">
-                {{ row.first_name }} {{ row.last_name }}
+            <td data-title="{{ row.get_listview_headers.0 }}">
+                <a href="{% url 'visitors:client_detail' pk=row.id %}">
+                    <strong>{{ row.full_name }}</strong>
+                    <a href="{% url 'visitors:client_update' pk=row.id %}">update</a>
+                </a>
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.1 }}">
+            <td data-title="{{ row.get_listview_headers.1 }}">
                 {% for patient in row.patients.all %}
                     <div>
-                        <span class="glyphicons glyphicons-md
-                        glyphicons-{{ patient.css_species_class }}" aria-hidden="true">
-                        </span>
-                        <strong>{{ patient.name }}</strong>
+                        <a href="{% url 'visitors:patient_detail' pk=patient.id %}">
+                            <span class="glyphicons glyphicons-md
+                            glyphicons-{{ patient.css_species_class }}" aria-hidden="true">
+                            </span>
+                            {{ patient.name }}
+                        </a>
                     </div>
                 {% endfor patient %}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.2 }}">
+            <td data-title="{{ row.get_listview_headers.2 }}">
                 {{ row.street_address }}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.3 }}">
+            <td data-title="{{ row.get_listview_headers.3 }}">
                 {{ row.mobile }}
+                &nbsp;
             </td>
-            <td data-title="{{ column_list.4 }}">
-                (empty)
-            </td>
-            <td>
-                (empty)
-            </td>
+
         </tr>
     {% endfor row %}
 

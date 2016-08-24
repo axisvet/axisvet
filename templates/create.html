@@ -1,0 +1,14 @@
+{# used for list pages with a table #}
+{% extends 'index.html' %}
+{% load i18n %}
+
+
+{% block headline_icon %}
+    {% for icon in icons %}
+        <span class="glyphicons glyphicons-{{ icon }}"></span>
+    {% endfor %}
+{% endblock headline_icon %}
+
+{% block headline_widget %}
+    nothing from create.html
+{% endblock headline_widget %}

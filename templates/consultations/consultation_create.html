@@ -1,8 +1,8 @@
-{% extends 'index.html' %}
+{% extends 'create.html' %}
 {% load i18n %}
 
 {% block content %}
-    <form action="{% url 'consultations:create' %}" method="post">
+    <form action="" method="post">
         {% csrf_token %}
 
         {{ form.as_p }}
@@ -18,7 +18,7 @@
                 {{ formset.management_form }}
             </div>
         {% endfor %}
-        <input type="submit" value="Add consultation" class="submit"/>
+        <input type="submit" value="{{ decorator_text }}" class="submit"/>
     </form>
 
 {% endblock %}

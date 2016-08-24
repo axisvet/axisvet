@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Family Vet</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav nav">
+                <li {% if 'appointments' in request.path %}class="active"{% endif %}>
+                    <a href="{% url 'appointments:list' %}">
+                        <span class="glyphicons glyphicons-xl glyphicons-home" aria-hidden="true"></span>
+                        Reception
+                        <!-- display label indicating number of clients waiting to pay -->
+                        {% if TO_PAY_COUNT %}
+                            <span class="label label-danger">{{ TO_PAY_COUNT }}</span>
+                        {% endif %}
+                    </a>
+
+                </li>
+                <li {% if 'clients' in request.path %}class="active"{% endif %}>
+                    <a href="{% url 'visitors:client_list' %}">
+                        <span class="glyphicons glyphicons-xl glyphicons-group" aria-hidden="true"></span>
+                        Clients</a>
+                </li>
+                <li {% if 'patients' in request.path %}class="active"{% endif %}>
+                    <a href="{% url 'visitors:patient_list' %}">
+                        <span class="glyphicons glyphicons-xl glyphicons-cat" aria-hidden="true"></span>
+                        Patients</a>
+                </li>
+                <li {% if 'consultations' in request.path %}class="active"{% endif %}>
+                    <a href="{% url 'consultations:list' %}">
+                        <span class="glyphicons glyphicons-xl glyphicons-stethoscope" aria-hidden="true"></span>
+                        Consultations</a>
+                </li>
+
+            </ul>
+            <p class="navbar-text navbar-right">Signed in as {{ request.user }}</p>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

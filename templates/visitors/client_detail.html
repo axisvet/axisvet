@@ -1,4 +1,33 @@
 {% extends 'index.html' %}
+{% load model_field %}
 {% load i18n %}
 
-{% block content %}Client details page{% endblock content %}
+{% block content %}
+
+    {% for header in object.get_listview_headers %}
+        {{ header }}<br/>
+    {% endfor %}
+
+    <hr/>
+
+    <p> {{ object.VERBOSE_FIRST_NAME }} : {{ object.first_name }}</p>
+    <p> {{ object.VERBOSE_LAST_NAME }} : {{ object.last_name }}</p>
+    <p> {{ object.VERBOSE_EMAIL }} : {{ object.email }}</p>
+
+    <p> {{ object.VERBOSE_PATIENTS }} :</p>
+    {% for patient in object.patients.all %}
+       - {{ patient.name }} / {{ patient.gender }} / {{ patient.breed }} <br/>
+    {% endfor %}
+
+    <p> {{ object.VERBOSE_STREET_ADDRESS }} : {{ object.street_address }}</p>
+    <p> {{ object.VERBOSE_STREET_ADDRESS_2 }} : {{ object.street_address_2 }}</p>
+    <p> {{ object.VERBOSE_CITY }} : {{ object.city }}</p>
+    <p> {{ object.VERBOSE_ZIP }} : {{ object.zip }}</p>
+    <p> {{ object.VERBOSE_COUNTY }} : {{ object.county }}</p>
+    <p> {{ object.VERBOSE_MOBILE }} : {{ object.organisation_name }}</p>
+    <p> {{ object.VERBOSE_ORGANISATION_NAME }} : {{ object.organisation_name }}</p>
+    <p> {{ object.VERBOSE_REMARKS }} : {{ object.remarks }}</p>
+
+{% endblock content %}
+
+
