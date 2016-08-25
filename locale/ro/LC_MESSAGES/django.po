@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-24 18:18+0300\n"
+"POT-Creation-Date: 2016-08-25 18:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,27 +67,27 @@ msgstr ""
 msgid "Consultation"
 msgstr ""
 
-#: appointments/views.py:40 consultations/views.py:55 visitors/views.py:55
-#: visitors/views.py:157
+#: appointments/views.py:41 consultations/views.py:56 visitors/views.py:42
+#: visitors/views.py:127
 msgid "details"
 msgstr ""
 
-#: appointments/views.py:49
+#: appointments/views.py:50
 #, python-format
 msgid "Appointment '%(reason)s' on %(start)s was created successfully"
 msgstr ""
 
-#: appointments/views.py:60 consultations/views.py:108 templates/list.html:7
-#: visitors/views.py:81 visitors/views.py:182
+#: appointments/views.py:61 consultations/views.py:109 templates/list.html:7
+#: visitors/views.py:67 visitors/views.py:152
 msgid "Add"
 msgstr ""
 
-#: appointments/views.py:69
+#: appointments/views.py:70
 msgid "Appointment was update successfully"
 msgstr ""
 
-#: appointments/views.py:80 consultations/views.py:164 visitors/views.py:108
-#: visitors/views.py:207
+#: appointments/views.py:81 consultations/views.py:165 visitors/views.py:94
+#: visitors/views.py:177
 msgid "Update"
 msgstr ""
 
@@ -168,11 +168,11 @@ msgstr ""
 msgid "Treatment Plans"
 msgstr ""
 
-#: consultations/views.py:65
+#: consultations/views.py:66
 msgid "Consultation was created successfully"
 msgstr ""
 
-#: consultations/views.py:119
+#: consultations/views.py:120
 msgid "Consultation was updated successfully"
 msgstr ""
 
@@ -352,21 +352,21 @@ msgstr ""
 msgid "Deceased"
 msgstr ""
 
-#: visitors/views.py:76
+#: visitors/views.py:62
 #, python-format
 msgid "Client %(first_name)s %(last_name)s was added successfully"
 msgstr ""
 
-#: visitors/views.py:103
+#: visitors/views.py:89
 msgid "Client was updated successfully"
 msgstr ""
 
-#: visitors/views.py:177
+#: visitors/views.py:147
 #, python-format
 msgid "Patient %(name)s was added successfully"
 msgstr ""
 
-#: visitors/views.py:202
+#: visitors/views.py:172
 #, python-format
 msgid "Patient %(name)s was updated successfully"
 msgstr ""
