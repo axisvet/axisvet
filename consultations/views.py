@@ -5,11 +5,28 @@ from django.core.urlresolvers import reverse
 from braces.views import LoginRequiredMixin
 from extra_views import CreateWithInlinesView, NamedFormsetsMixin, UpdateWithInlinesView
 from django.utils.translation import ugettext as _
-from django.contrib.messages.views import InlineSuccessMessageMixin
+#from django.contrib.messages.views import InlineSuccessMessageMixin
 from .models import Consultation
 from appointments.models import Appointment
 from .forms import ObservationInlineFormset, ConsultationModelForm, ClinicalNotesInlineFormset
 from django.http import HttpResponse
+
+
+class InlineSuccessMessageMixin(object):
+    """
+    Adds a success message on successful form submission.
+    """
+    success_message = ''
+
+    def forms_valid(self, form, formset):
+        response = super(InlineSuccessMessageMixin, self).forms_valid(form, formset)
+        success_message = self.get_success_message(form.cleaned_data)
+        if success_message:
+            messages.success(self.request, success_message)
+        return response
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message % cleaned_data
 
 
 class ConsultationListView(LoginRequiredMixin, ListView):
