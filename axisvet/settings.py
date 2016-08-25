@@ -150,10 +150,7 @@ DATETIME_FORMAT = 'd-m-Y H:i'
 
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-LOCALE_PATHS = [
-    '/Users/davidmurphy/python3devel/translations/locale/',
-]
-
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'translations/locale')]
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
