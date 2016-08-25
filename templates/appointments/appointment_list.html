@@ -23,7 +23,9 @@
             <td data-title="{{ row.get_listview_headers.1 }}">
                 <!-- dynamically populate cells based on context list -->
                 {#% load settings_value %#}{#{ row|settings_value:ttt }#}
-                {{ row.client }}
+                {{ row.client }}<br>
+                 <span class="glyphicons glyphicons-md glyphicons-phone-alt" aria-hidden="true">
+                        </span>{{ row.client.mobile }}
                 &nbsp;
             </td>
             <td data-title="{{ row.get_listview_headers.2 }}">
