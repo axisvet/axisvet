@@ -2,3 +2,5 @@
 *.pyc
 *.rej
 *.xml
+.idea/
+settings.py
