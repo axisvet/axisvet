@@ -21,7 +21,7 @@ class AppointmentListView(LoginRequiredMixin, SearchableListMixin, ListView):
             )
 
     search_fields = ['status', 'start', 'reason', 'client__first_name', 'client__last_name',
-                     'client__street_address', 'client__mobile', 'patients__name', 'patients__species__name']
+                     'client__street_address', 'client__ifomobile', 'patients__name', 'patients__species__name']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
