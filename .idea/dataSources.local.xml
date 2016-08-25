@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Sqlite axisvet" uuid="35735c87-264f-4259-b2df-b431669adde0">
-      <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Sqlite axisv1(do not use)" uuid="6f0e4574-f59f-4394-9fff-3614b86b79fa">
-      <secret-storage>master_key</secret-storage>
+    <data-source name="Django default" uuid="0599aaed-9ee1-4f05-8b22-0fd0f338f17d">
+      <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <auth-required>false</auth-required>
     </data-source>
   </component>

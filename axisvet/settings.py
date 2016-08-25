@@ -83,7 +83,7 @@ ROOT_URLCONF = 'axisvet.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/Users/davidmurphy/python3devel/axisvet/templates'],
+        'DIRS': ['/home/familyvet/DEV/django/axisvet/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'string_if_invalid': 'INVALID EXPRESSION: %s',
@@ -147,7 +147,7 @@ DATETIME_FORMAT = 'd-m-Y H:i'
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 
-STATIC_ROOT = "/Users/davidmurphy/python3devel/axisvet/"
+STATIC_ROOT = "/home/familyvet/DEV/django/axisvet/"
 STATIC_URL = '/static/'
 LOCALE_PATHS = [
     '/Users/davidmurphy/python3devel/translations/locale/',
