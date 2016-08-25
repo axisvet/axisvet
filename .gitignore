@@ -3,5 +3,4 @@
 *.rej
 *.xml
 .idea/*
-settings.py
 *.DS_Store
