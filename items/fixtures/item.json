@@ -1,0 +1,2972 @@
+[
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 108,
+      "code": "",
+      "name": "Lidocain spray",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 109,
+      "code": "",
+      "name": "Consultatie cu programare",
+      "price": 37.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 110,
+      "code": "",
+      "name": "Consultatie urgenta",
+      "price": 125.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 111,
+      "code": "",
+      "name": "Consultatie ofthalmologie/ortopedie",
+      "price": 50.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 112,
+      "code": "",
+      "name": "Consultatie fara programare",
+      "price": 50.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 113,
+      "code": "",
+      "name": "Recontrol",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 114,
+      "code": "",
+      "name": "Vaccin Iepure",
+      "price": 33.33,
+      "wholesale_price": 33.33,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 115,
+      "code": "",
+      "name": "Microcipare",
+      "price": 37.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 116,
+      "code": "",
+      "name": "Pasaport",
+      "price": 33.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 117,
+      "code": "",
+      "name": "Microcipare/carnet/RECS",
+      "price": 50.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 118,
+      "code": "",
+      "name": "Carnet de sanatate",
+      "price": 8.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 119,
+      "code": "",
+      "name": "RECS Inregistrare",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 120,
+      "code": "",
+      "name": "Eurican DHPPI-L",
+      "price": 45.83,
+      "wholesale_price": 16.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 121,
+      "code": "",
+      "name": "Examen ofthalmoscopic",
+      "price": 41.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 122,
+      "code": "",
+      "name": "Examen Otoscopic",
+      "price": 41.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 123,
+      "code": "",
+      "name": "Reteta regim special",
+      "price": 12.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 124,
+      "code": "",
+      "name": "Radiograph prima expunere",
+      "price": 83.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 125,
+      "code": "",
+      "name": "Radiograph a doua expunere",
+      "price": 66.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 126,
+      "code": "",
+      "name": "Ecografie",
+      "price": 66.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 127,
+      "code": "",
+      "name": "Ecografie imprimarea",
+      "price": 8.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 129,
+      "code": "",
+      "name": "snaptest",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 131,
+      "code": "",
+      "name": "Sediment urina",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 132,
+      "code": "",
+      "name": "Test Coproscopic",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 133,
+      "code": "",
+      "name": "Raclat",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 134,
+      "code": "",
+      "name": "Frotiu sange",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 135,
+      "code": "",
+      "name": "Examen citologic",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 136,
+      "code": "",
+      "name": "Test viermi la inima (lama)",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 137,
+      "code": "",
+      "name": "Recoltare sange",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 138,
+      "code": "",
+      "name": "Teste Dermatofiti",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 139,
+      "code": "",
+      "name": "Test Leishmania",
+      "price": 58.33,
+      "wholesale_price": 58.33,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 140,
+      "code": "",
+      "name": "Test Brucela",
+      "price": 125.0,
+      "wholesale_price": 125.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 141,
+      "code": "",
+      "name": "Test Toxoplasma",
+      "price": 100.0,
+      "wholesale_price": 100.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 142,
+      "code": "",
+      "name": "Test Viermi la inima (Heartworm Ag)",
+      "price": 83.33,
+      "wholesale_price": 29.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 143,
+      "code": "",
+      "name": "Test Parvo",
+      "price": 66.67,
+      "wholesale_price": 10.4,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 144,
+      "code": "",
+      "name": "Sumar urina",
+      "price": 33.33,
+      "wholesale_price": 33.33,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 145,
+      "code": "",
+      "name": "Test Panleucopenie",
+      "price": 108.33,
+      "wholesale_price": 108.33,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 146,
+      "code": "",
+      "name": "Test Jigodie",
+      "price": 66.67,
+      "wholesale_price": 66.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 148,
+      "code": "",
+      "name": "Test Giardia",
+      "price": 66.67,
+      "wholesale_price": 66.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 150,
+      "code": "",
+      "name": "Test Idexx snap 4DX",
+      "price": 100.0,
+      "wholesale_price": 100.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 152,
+      "code": "",
+      "name": "Creatinina",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 153,
+      "code": "",
+      "name": "Amilaza",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 154,
+      "code": "",
+      "name": "Test Idexx Snap Specific Pancreatic Lipase",
+      "price": 125.0,
+      "wholesale_price": 125.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 155,
+      "code": "",
+      "name": "Fosfor anorganic",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 156,
+      "code": "",
+      "name": "GGT",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 157,
+      "code": "",
+      "name": "Calciu",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 158,
+      "code": "",
+      "name": "Test Coagulare (lama)",
+      "price": 16.67,
+      "wholesale_price": 16.67,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 159,
+      "code": "",
+      "name": "Amoniac",
+      "price": 50.0,
+      "wholesale_price": 50.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 160,
+      "code": "",
+      "name": "Test fluoresceina",
+      "price": 20.83,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 161,
+      "code": "",
+      "name": "Test Schirmer",
+      "price": 33.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 162,
+      "code": "",
+      "name": "Cuparea gheare",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 164,
+      "code": "",
+      "name": "Vidare glande perianale",
+      "price": 25.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 165,
+      "code": "",
+      "name": "Glucoza",
+      "price": 12.5,
+      "wholesale_price": 12.5,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 166,
+      "code": "",
+      "name": "Toaleta auriculara (usor)",
+      "price": 12.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 167,
+      "code": "",
+      "name": "Toaleta auriculara (mediu)",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 168,
+      "code": "",
+      "name": "Toaleta auriculara (murdar)",
+      "price": 25.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 170,
+      "code": "",
+      "name": "Presiune intraoculara",
+      "price": 33.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 172,
+      "code": "",
+      "name": "Toaleta plagi (pe minut)",
+      "price": 1.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 173,
+      "code": "",
+      "name": "Oxigenterapia (pe ora)",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 174,
+      "code": "",
+      "name": "Eurican Primodog",
+      "price": 33.33,
+      "wholesale_price": 33.33,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 175,
+      "code": "",
+      "name": "Eurican DHPPI-LR",
+      "price": 62.5,
+      "wholesale_price": 23.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 176,
+      "code": "",
+      "name": "Aplicatie cateter intravenos",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 177,
+      "code": "",
+      "name": "Injectie subcutanata ",
+      "price": 6.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 178,
+      "code": "",
+      "name": "Injectie intramuscular",
+      "price": 8.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 179,
+      "code": "",
+      "name": "Injectie Intravenos",
+      "price": 12.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 180,
+      "code": "",
+      "name": "Vaccin bordetella (KC)",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 181,
+      "code": "",
+      "name": "Perfuzie intravenous (500ml)",
+      "price": 41.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 182,
+      "code": "",
+      "name": "Eutanasie <10kg",
+      "price": 66.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 183,
+      "code": "",
+      "name": "Purevax RCP",
+      "price": 66.67,
+      "wholesale_price": 66.67,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 184,
+      "code": "",
+      "name": "Eutanasie 10-20kg",
+      "price": 83.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 185,
+      "code": "",
+      "name": "Purevax+Rabic",
+      "price": 79.17,
+      "wholesale_price": 36.66,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 186,
+      "code": "",
+      "name": "Eutanasie 20-40kg",
+      "price": 100.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 187,
+      "code": "",
+      "name": "Eutanasie 40+kg",
+      "price": 125.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 188,
+      "code": "",
+      "name": "Incinerare <10kg (pe kg)",
+      "price": 14.17,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 189,
+      "code": "",
+      "name": "Incinerare 10-20kg (pe kg)",
+      "price": 12.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 190,
+      "code": "",
+      "name": "Incinerare 20-40kg (pe kg)",
+      "price": 11.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 191,
+      "code": "",
+      "name": "Incinerare 40+kg (pe kg)",
+      "price": 11.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 192,
+      "code": "",
+      "name": "Vaccin antirabic",
+      "price": 20.83,
+      "wholesale_price": 20.83,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 193,
+      "code": "",
+      "name": "Ketamina 10%",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 194,
+      "code": "",
+      "name": "Felocell CVR  / Felibio + R",
+      "price": 62.5,
+      "wholesale_price": 62.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 195,
+      "code": "",
+      "name": "Xylazine 2%  50ml",
+      "price": 0.0,
+      "wholesale_price": 19.32,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 196,
+      "code": "",
+      "name": "Eurican DHPPI",
+      "price": 41.67,
+      "wholesale_price": 15.1,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 197,
+      "code": "",
+      "name": "Dexafort",
+      "price": 416.67,
+      "wholesale_price": 48.95,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 198,
+      "code": "",
+      "name": "Dexavet 0.2%   100ml",
+      "price": 416.67,
+      "wholesale_price": 17.4,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 200,
+      "code": "",
+      "name": "Prednisolon 10mg/ml",
+      "price": 166.67,
+      "wholesale_price": 166.67,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 201,
+      "code": "",
+      "name": "Novasul 100ml",
+      "price": 166.67,
+      "wholesale_price": 44.69,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 202,
+      "code": "",
+      "name": "Clamoxyl LA 100ml",
+      "price": 183.49,
+      "wholesale_price": 48.45,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 203,
+      "code": "",
+      "name": "Cobactan 2.5% 100ml",
+      "price": 416.67,
+      "wholesale_price": 164.69,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 204,
+      "code": "",
+      "name": "Dophatrim-ject 100ml",
+      "price": 250.0,
+      "wholesale_price": 23.37,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 205,
+      "code": "",
+      "name": "Enroxil 5% 100ml",
+      "price": 166.67,
+      "wholesale_price": 38.85,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 206,
+      "code": "",
+      "name": "Lincospectin 100ml",
+      "price": 333.33,
+      "wholesale_price": 71.94,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 207,
+      "code": "",
+      "name": "Synulox inj",
+      "price": 416.67,
+      "wholesale_price": 119.55,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 208,
+      "code": "",
+      "name": "Ancesol",
+      "price": 125.0,
+      "wholesale_price": 69.51,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 209,
+      "code": "",
+      "name": "Beforvel",
+      "price": 83.33,
+      "wholesale_price": 16.79,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 210,
+      "code": "",
+      "name": "Beforvel AD3E",
+      "price": 83.33,
+      "wholesale_price": 16.79,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 211,
+      "code": "",
+      "name": "Catosal 100ml",
+      "price": 166.67,
+      "wholesale_price": 62.94,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 212,
+      "code": "",
+      "name": "Multivit inj 100ml",
+      "price": 166.67,
+      "wholesale_price": 15.99,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 213,
+      "code": "",
+      "name": "Vitamina C 100ml",
+      "price": 83.33,
+      "wholesale_price": 11.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 214,
+      "code": "",
+      "name": "Calciu Gluconic 10%  100ml",
+      "price": 41.67,
+      "wholesale_price": 7.7,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 215,
+      "code": "",
+      "name": "Acid uric",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 216,
+      "code": "",
+      "name": "Albumina",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 217,
+      "code": "",
+      "name": "Bandaj mic",
+      "price": 8.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 218,
+      "code": "",
+      "name": "Bandaj mediu",
+      "price": 12.5,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 219,
+      "code": "",
+      "name": "Bandaj mare",
+      "price": 16.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 220,
+      "code": "",
+      "name": "Bandaj XL",
+      "price": 29.17,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 221,
+      "code": "",
+      "name": "Bandaj gipsat/ Robert Jones mic",
+      "price": 33.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 222,
+      "code": "",
+      "name": "Bandaj gipsat/ Robert Jones mediu",
+      "price": 50.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 223,
+      "code": "",
+      "name": "Bandaj gipsat/ Robert Jones mare",
+      "price": 66.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 224,
+      "code": "",
+      "name": "ALP (Alkaline Phosphatase)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 225,
+      "code": "",
+      "name": "Bilirubina",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 226,
+      "code": "",
+      "name": "Colesterol",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 227,
+      "code": "",
+      "name": "AST (Aspartate Aminotransferase)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 228,
+      "code": "",
+      "name": "ALT (Alanine Aminotransferase) ",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 229,
+      "code": "",
+      "name": "Proteina totala",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 230,
+      "code": "",
+      "name": "Trigliceride",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 231,
+      "code": "",
+      "name": "BUN (Blood Urea Nitrogen)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 232,
+      "code": "",
+      "name": "Na",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 233,
+      "code": "",
+      "name": "K",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 234,
+      "code": "",
+      "name": "Cl",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 235,
+      "code": "",
+      "name": "Kidney 2: Analize rinichi (5 parametrii)",
+      "price": 66.67,
+      "wholesale_price": 66.67,
+      "type_code": 6
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 236,
+      "code": "",
+      "name": "Panel 1: Test biochimie (6 parametri)",
+      "price": 91.67,
+      "wholesale_price": 13.3,
+      "type_code": 6
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 237,
+      "code": "",
+      "name": "Panel 5: Test biochimie (6 parametri)",
+      "price": 91.67,
+      "wholesale_price": 91.67,
+      "type_code": 6
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 238,
+      "code": "",
+      "name": "Electroliti",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 6
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 239,
+      "code": "",
+      "name": "Internare Pisica",
+      "price": 25.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 240,
+      "code": "",
+      "name": "Internare Caine",
+      "price": 33.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 241,
+      "code": "",
+      "name": "WBC",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 242,
+      "code": "",
+      "name": "Internare  îngrijire intensiva",
+      "price": 50.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 243,
+      "code": "",
+      "name": "Lym",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 244,
+      "code": "",
+      "name": "Mono",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 245,
+      "code": "",
+      "name": "Neut",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 246,
+      "code": "",
+      "name": "Eos",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 247,
+      "code": "",
+      "name": "Lym %",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 248,
+      "code": "",
+      "name": "Mon %",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 249,
+      "code": "",
+      "name": "Neu %",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 250,
+      "code": "",
+      "name": "Eos %",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 251,
+      "code": "",
+      "name": "HGB (Hemoglobin)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 252,
+      "code": "",
+      "name": "HCT (Hematocrit)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 253,
+      "code": "",
+      "name": "RBC",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 254,
+      "code": "",
+      "name": "MCV (Mean Corpuscular Volume)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 255,
+      "code": "",
+      "name": "MCH (Mean Corpuscular Hemoglobin)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 256,
+      "code": "",
+      "name": "MCHC (Mean Corpuscular Hemoglobin Concentration )",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 257,
+      "code": "",
+      "name": "RDW % (RBC Distribution Width %)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 258,
+      "code": "",
+      "name": "Furosamid 20mg/2ml",
+      "price": 20.83,
+      "wholesale_price": 5.79,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 259,
+      "code": "",
+      "name": "RDWa (RBC Distribution Width)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 260,
+      "code": "",
+      "name": "PLT (Platelet Count)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 261,
+      "code": "",
+      "name": "MPV (Mean Platelet Volume)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 262,
+      "code": "",
+      "name": "Analyse hematologice (CBC)",
+      "price": 66.67,
+      "wholesale_price": 66.67,
+      "type_code": 6
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 263,
+      "code": "",
+      "name": "Fitomenadion 10mg/ml",
+      "price": 33.33,
+      "wholesale_price": 15.36,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 264,
+      "code": "",
+      "name": "Etamsilat",
+      "price": 64.22,
+      "wholesale_price": 32.06,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 265,
+      "code": "",
+      "name": "Metoclopramide 5mg/ml",
+      "price": 16.67,
+      "wholesale_price": 32.06,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 266,
+      "code": "",
+      "name": "Memotal 1g/5ml",
+      "price": 45.87,
+      "wholesale_price": 9.33,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 267,
+      "code": "",
+      "name": "Arnetin 50mg/2ml",
+      "price": 50.0,
+      "wholesale_price": 13.17,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 268,
+      "code": "",
+      "name": "Vitamina B1",
+      "price": 41.67,
+      "wholesale_price": 7.26,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 269,
+      "code": "",
+      "name": "Vitamina B6 50mg/2ml",
+      "price": 41.67,
+      "wholesale_price": 7.26,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 270,
+      "code": "",
+      "name": "Vitamina B12",
+      "price": 12.5,
+      "wholesale_price": 7.26,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 271,
+      "code": "",
+      "name": "Miofilin 24mg/ml",
+      "price": 83.33,
+      "wholesale_price": 12.29,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 272,
+      "code": "",
+      "name": "Hidrocortizon hemisuccinat",
+      "price": 104.17,
+      "wholesale_price": 22.18,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 273,
+      "code": "",
+      "name": "Aspatofort",
+      "price": 1250.0,
+      "wholesale_price": 32.6,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 274,
+      "code": "",
+      "name": "Biomec Ivermectina 100ml",
+      "price": 333.33,
+      "wholesale_price": 27.45,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 275,
+      "code": "",
+      "name": "Galastop 24ml",
+      "price": 360.0,
+      "wholesale_price": 144.03,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 276,
+      "code": "",
+      "name": "Biseptyl 100ml",
+      "price": 366.97,
+      "wholesale_price": 42.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 277,
+      "code": "",
+      "name": "Clorura de potasiu 74.56mg",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 278,
+      "code": "",
+      "name": "Deca Durabolin 100mg/ml",
+      "price": 83.33,
+      "wholesale_price": 91.74,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 279,
+      "code": "",
+      "name": "Amoxycen 200 LA",
+      "price": 1093.33,
+      "wholesale_price": 62.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 280,
+      "code": "",
+      "name": "Imaverol 100mg/ml",
+      "price": 0.0,
+      "wholesale_price": 46.17,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 281,
+      "code": "",
+      "name": "Tsefalen 1000mg",
+      "price": 65.0,
+      "wholesale_price": 43.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 282,
+      "code": "",
+      "name": "Panacur 10%",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 283,
+      "code": "",
+      "name": "Tranquiline 35mg/ml",
+      "price": 83.33,
+      "wholesale_price": 33.36,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 284,
+      "code": "",
+      "name": "Cardalis 10mg/80mg",
+      "price": 275.0,
+      "wholesale_price": 165.44,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 285,
+      "code": "",
+      "name": "Cardalis 2.5mg/20mg",
+      "price": 125.0,
+      "wholesale_price": 71.13,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 286,
+      "code": "",
+      "name": "Tsefalen 500mg",
+      "price": 50.0,
+      "wholesale_price": 33.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 287,
+      "code": "",
+      "name": "Cardalis 5mg/40mg",
+      "price": 150.0,
+      "wholesale_price": 106.13,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 288,
+      "code": "",
+      "name": "Biovet Digestive Support",
+      "price": 42.5,
+      "wholesale_price": 42.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 289,
+      "code": "",
+      "name": "Osteocicatrat 30g",
+      "price": 20.0,
+      "wholesale_price": 12.05,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 290,
+      "code": "",
+      "name": "Karsivan",
+      "price": 250.0,
+      "wholesale_price": 145.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 291,
+      "code": "",
+      "name": "Osteocicatract 50g",
+      "price": 21.67,
+      "wholesale_price": 15.46,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 292,
+      "code": "",
+      "name": "Pet Phos Felin Pelage",
+      "price": 37.5,
+      "wholesale_price": 15.72,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 293,
+      "code": "",
+      "name": "Pet Phos Felin Senior",
+      "price": 37.5,
+      "wholesale_price": 14.39,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 294,
+      "code": "",
+      "name": "Pet Phos Felin Croissance",
+      "price": 37.5,
+      "wholesale_price": 8.28,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 295,
+      "code": "",
+      "name": "Kesium 250mg",
+      "price": 800.0,
+      "wholesale_price": 468.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 296,
+      "code": "",
+      "name": "Vetmedin 5mg",
+      "price": 291.67,
+      "wholesale_price": 232.05,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 297,
+      "code": "",
+      "name": "Tenazym 10ml",
+      "price": 20.83,
+      "wholesale_price": 13.58,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 298,
+      "code": "",
+      "name": "Kesium 62.5mg",
+      "price": 400.0,
+      "wholesale_price": 204.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 299,
+      "code": "",
+      "name": "Hepatosyl 100",
+      "price": 70.0,
+      "wholesale_price": 45.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 300,
+      "code": "",
+      "name": "Hepatosyl 200",
+      "price": 87.5,
+      "wholesale_price": 55.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 301,
+      "code": "",
+      "name": "Surolan 15ml",
+      "price": 40.0,
+      "wholesale_price": 27.3,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 302,
+      "code": "",
+      "name": "Oto-sept",
+      "price": 8.33,
+      "wholesale_price": 3.45,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 303,
+      "code": "",
+      "name": "Enroxil 150mg",
+      "price": 0.0,
+      "wholesale_price": 32.56,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 304,
+      "code": "",
+      "name": "Enroxil 15mg",
+      "price": 0.0,
+      "wholesale_price": 13.01,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 305,
+      "code": "",
+      "name": "Therios 75mg",
+      "price": 583.33,
+      "wholesale_price": 310.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 306,
+      "code": "",
+      "name": "Therios 300mg",
+      "price": 833.33,
+      "wholesale_price": 530.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 307,
+      "code": "",
+      "name": "Efex 10mg",
+      "price": 400.0,
+      "wholesale_price": 250.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 308,
+      "code": "",
+      "name": "Efex 40mg",
+      "price": 600.0,
+      "wholesale_price": 354.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 309,
+      "code": "",
+      "name": "Efex 100mg",
+      "price": 800.0,
+      "wholesale_price": 474.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 310,
+      "code": "",
+      "name": "Zodon 264mg",
+      "price": 800.0,
+      "wholesale_price": 570.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 311,
+      "code": "",
+      "name": "Xeden 200mg",
+      "price": 700.0,
+      "wholesale_price": 414.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 312,
+      "code": "",
+      "name": "Uro Pet",
+      "price": 54.17,
+      "wholesale_price": 38.97,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 313,
+      "code": "",
+      "name": "Urolsyn",
+      "price": 20.83,
+      "wholesale_price": 11.12,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 314,
+      "code": "",
+      "name": "Metronidazol",
+      "price": 25.0,
+      "wholesale_price": 7.7,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 315,
+      "code": "",
+      "name": "Enteroguard",
+      "price": 16.67,
+      "wholesale_price": 6.55,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 316,
+      "code": "",
+      "name": "Previcox",
+      "price": 325.0,
+      "wholesale_price": 238.6,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 317,
+      "code": "",
+      "name": "Proglycan",
+      "price": 120.83,
+      "wholesale_price": 78.13,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 318,
+      "code": "",
+      "name": "Bonezeal",
+      "price": 183.33,
+      "wholesale_price": 119.34,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 319,
+      "code": "",
+      "name": "Procox 7.5ml",
+      "price": 62.5,
+      "wholesale_price": 36.56,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 320,
+      "code": "",
+      "name": "Drontal Puppy 15/5mg/ml",
+      "price": 291.67,
+      "wholesale_price": 62.74,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 321,
+      "code": "",
+      "name": "Drontal Cat",
+      "price": 28.33,
+      "wholesale_price": 18.18,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 322,
+      "code": "",
+      "name": "Drontal Plus 35kg",
+      "price": 63.33,
+      "wholesale_price": 43.46,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 323,
+      "code": "",
+      "name": "Drontal Plus Flavour 10kg",
+      "price": 65.0,
+      "wholesale_price": 39.59,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 324,
+      "code": "",
+      "name": "Pratel",
+      "price": 58.33,
+      "wholesale_price": 14.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 325,
+      "code": "",
+      "name": "Dermilen",
+      "price": 39.17,
+      "wholesale_price": 26.31,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 326,
+      "code": "",
+      "name": "Omega 3 + 6 + 9 ulei",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 327,
+      "code": "",
+      "name": "Clorexyderm 4% Sampon ",
+      "price": 48.33,
+      "wholesale_price": 33.75,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 328,
+      "code": "",
+      "name": "Oatmeal Aloe Sampon",
+      "price": 41.67,
+      "wholesale_price": 27.5,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 329,
+      "code": "",
+      "name": "Test FIV (Ab) / FeLV (Ag)",
+      "price": 125.0,
+      "wholesale_price": 38.0,
+      "type_code": 5
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 330,
+      "code": "",
+      "name": "Cerenia",
+      "price": 416.67,
+      "wholesale_price": 253.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 331,
+      "code": "",
+      "name": "Caninsulin 40 IU/ml",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 332,
+      "code": "",
+      "name": "Doxorubicina 2mg/ml",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 333,
+      "code": "",
+      "name": "Sindovin 1mg",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 334,
+      "code": "",
+      "name": "Cefort",
+      "price": 58.33,
+      "wholesale_price": 58.33,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 335,
+      "code": "",
+      "name": "Endoxan",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 336,
+      "code": "",
+      "name": "Penstrep 100ml",
+      "price": 166.67,
+      "wholesale_price": 24.61,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 337,
+      "code": "",
+      "name": "Transfuzie sange ",
+      "price": 125.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 338,
+      "code": "",
+      "name": "Otospectrine",
+      "price": 31.67,
+      "wholesale_price": 20.6,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 339,
+      "code": "",
+      "name": "Convenia",
+      "price": 1166.67,
+      "wholesale_price": 777.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 340,
+      "code": "",
+      "name": "Melovem 5 mg/ml 100ml",
+      "price": 1250.0,
+      "wholesale_price": 1250.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 341,
+      "code": "",
+      "name": "Metronidazole 5mg/ml  100ml",
+      "price": 41.67,
+      "wholesale_price": 4.57,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 342,
+      "code": "",
+      "name": "Osmofundin 15% 250ml",
+      "price": 104.17,
+      "wholesale_price": 4.87,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 343,
+      "code": "",
+      "name": "Dopram 20mg/ml",
+      "price": 1666.67,
+      "wholesale_price": 1666.67,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 344,
+      "code": "",
+      "name": "Broadline Pisici",
+      "price": 43.33,
+      "wholesale_price": 43.33,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 345,
+      "code": "",
+      "name": "Stronghold 45mg (2.6kg - 7.5kg)",
+      "price": 100.0,
+      "wholesale_price": 100.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 346,
+      "code": "",
+      "name": "Finidar 5mg",
+      "price": 4.17,
+      "wholesale_price": 7.11,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 347,
+      "code": "",
+      "name": "Sterilizare motan",
+      "price": 83.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 348,
+      "code": "",
+      "name": "Antisedan 5mg/ml",
+      "price": 416.67,
+      "wholesale_price": 135.12,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 349,
+      "code": "",
+      "name": "Morfina 20mg/ml",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 350,
+      "code": "",
+      "name": "Algifen",
+      "price": 41.67,
+      "wholesale_price": 41.67,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 351,
+      "code": "",
+      "name": "Xilina 10mg/ml (Lidocaine)",
+      "price": 41.67,
+      "wholesale_price": 11.96,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 352,
+      "code": "",
+      "name": "Adrenalina 1mg/1ml (Epinefrina)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 353,
+      "code": "",
+      "name": "Atropina 1mg/ml",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 354,
+      "code": "",
+      "name": "Diazepam 5mg/ml",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 355,
+      "code": "",
+      "name": "T61",
+      "price": 123.95,
+      "wholesale_price": 123.95,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 356,
+      "code": "",
+      "name": "Propofol",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 357,
+      "code": "",
+      "name": "Isofluran (Anesteran)",
+      "price": 0.0,
+      "wholesale_price": 0.0,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 358,
+      "code": "",
+      "name": "Zoletil 50mg/ml  10ml",
+      "price": 125.0,
+      "wholesale_price": 84.73,
+      "type_code": 2
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 359,
+      "code": "",
+      "name": "Sterlizare pisica",
+      "price": 166.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 360,
+      "code": "",
+      "name": "Sterilizare caine (<10kg)",
+      "price": 208.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 361,
+      "code": "",
+      "name": "Sterilizare caine (10-20kg)",
+      "price": 250.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 362,
+      "code": "",
+      "name": "Sterilizare caine (20-40kg)",
+      "price": 291.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 363,
+      "code": "",
+      "name": "Sterilizare caine (40+kg)",
+      "price": 333.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 364,
+      "code": "",
+      "name": "Sterilizare catea (<10kg)",
+      "price": 291.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 365,
+      "code": "",
+      "name": "Sterilizare catea (10-20kg)",
+      "price": 333.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 366,
+      "code": "",
+      "name": "Sterilizare catea (20-40kg)",
+      "price": 416.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 367,
+      "code": "",
+      "name": "Sterilizare catea (40+kg)",
+      "price": 500.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 368,
+      "code": "",
+      "name": "Piometru <pret suplimentar>",
+      "price": 83.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 369,
+      "code": "",
+      "name": "Cezariana (<10kg) <pret suplimentar>",
+      "price": 291.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 370,
+      "code": "",
+      "name": "Cezariana (10-20kg) <pret suplimentar>",
+      "price": 333.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 371,
+      "code": "",
+      "name": "Cezariana (20-40kg) <pret suplimentar>",
+      "price": 416.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 372,
+      "code": "",
+      "name": "Cezariana (40+kg) <pret suplimentar>",
+      "price": 500.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 373,
+      "code": "",
+      "name": "Cezariana (Pisica) <pret suplimentar>",
+      "price": 250.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 374,
+      "code": "",
+      "name": "In afara programului (Pisica) <pret suplimentar>",
+      "price": 83.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 375,
+      "code": "",
+      "name": "In afara programului (<10kg) <pret suplimentar> ",
+      "price": 83.33,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 376,
+      "code": "",
+      "name": "In afara programului (10-20kg) <pret suplimentar> ",
+      "price": 125.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 377,
+      "code": "",
+      "name": "In afara programului (20-40kg) <pret suplimentar> ",
+      "price": 166.67,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 378,
+      "code": "",
+      "name": "In afara programului (40+kg) <pret suplimentar> ",
+      "price": 250.0,
+      "wholesale_price": 0.0,
+      "type_code": 1
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 379,
+      "code": "",
+      "name": "Guler Protectie 7cm",
+      "price": 8.33,
+      "wholesale_price": 8.33,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 380,
+      "code": "",
+      "name": "Guler Protectie 12.5cm",
+      "price": 13.33,
+      "wholesale_price": 5.51,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 381,
+      "code": "",
+      "name": "Guler Protectie 10cm",
+      "price": 12.5,
+      "wholesale_price": 4.91,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 382,
+      "code": "",
+      "name": "Guler Protectie 15cm",
+      "price": 16.67,
+      "wholesale_price": 6.47,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 383,
+      "code": "",
+      "name": "Guler Protectie 20cm",
+      "price": 18.33,
+      "wholesale_price": 7.34,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 384,
+      "code": "",
+      "name": "Guler Protectie 25cm",
+      "price": 23.33,
+      "wholesale_price": 9.27,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 385,
+      "code": "",
+      "name": "Guler Protectie 30cm",
+      "price": 27.5,
+      "wholesale_price": 11.01,
+      "type_code": 3
+    }
+  },
+  {
+    "model": "items.item",
+    "fields": {
+      "id": 386,
+      "code": "",
+      "name": "Guler Protectie 35cm",
+      "price": 30.0,
+      "wholesale_price": 12.0,
+      "type_code": 3
+    }}
+    ]
+
